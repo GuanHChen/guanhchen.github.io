@@ -1,0 +1,9 @@
+---
+title: "Hobbies"
+---
+
+About this site
+
+```{r}
+1 + 1
+```

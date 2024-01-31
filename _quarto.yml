@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: "docs"
+  resources: 
+    - path/to/file.pdf
+
+website:
+  title: "Guan Chen"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Assignments
+        menu:
+          - href: assignment1.qmd
+            text: Assignment 1
+      - cv.qmd
+    
+    right: 
+      - menu: 
+        - href: proposal.qmd
+          text: Project Proposal
+
+format:
+  html:
+    theme: yeti
+    css: styles.css
+    toc: true
+    warning: false
+    error: false
+    message: false
+    #echo: false
+
+editor: visual
+

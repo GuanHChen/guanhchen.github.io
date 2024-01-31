@@ -1,0 +1,29 @@
+### About Me <i class="bi bi-rocket-takeoff-fill"></i>
+
+[]: # (  ::: {.card}  )
+
+::: {.grid}
+
+:::: {.g-col-4}
+
+![](/Users/guan/Documents/Work/RE_ NSM Portraits - Dropbox/Guan Chen.jpg){fig-align="left" width="100"}
+
+::::
+
+:::: {.g-col-8}
+
+Hello! I am currently a master's student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background in bacterial genetics and membrane biology and am working to develop skills in programming to complement my analytical abilities. I'm curious about the things we can do with data and hope to work as a data scientist.
+
+Please feel free to look around my website and learn more about me!
+
+::::
+
+:::
+
+[]: # ( ::: )
+
+
+
+### Contact Me
+
+[guan.chen@utdallas.edu](mailto:guan.chen@utdallas.edu)

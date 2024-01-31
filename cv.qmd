@@ -1,0 +1,11 @@
+---
+title: "CV"
+---
+
+```{=html}
+<object data="Guan Chen Resume 24S.pdf" type="application/pdf" width="100%" height="800px">
+
+</object>
+```
+
+![CV](/Users/guan/Documents/guanhchen.github.io/Guan Chen Resume 24S.pdf)
