@@ -165,6 +165,6 @@
     "href": "assignment2.html",
     "title": "Assignment 2",
     "section": "",
-    "text": "library(haven)\nlibrary(tidyverse)\nTEDS_2016 &lt;-\n  read_stata(\"/Users/guan/Documents/Knowledge Mining /Assignment 2 Knowledge Mining/TEDS_2016.dta\")"
+    "text": "library(haven)\nlibrary(tidyverse)\nTEDS_2016 &lt;-\n  read_stata(\"/Users/guan/Documents/Knowledge Mining /Assignment 2 Knowledge Mining/TEDS_2016.dta\")\n\nggplot(data = TEDS_2016) +\n  geom_point(mapping = aes(x = age, y = income))\n\n\n\n\n\n\n\n\nAt first glance, it is difficult to identify trends because a lot of the variables are binary (i.e. sex, party, whitecollar)."
   }
 ]

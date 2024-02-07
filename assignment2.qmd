@@ -9,6 +9,9 @@ library(haven)
 library(tidyverse)
 TEDS_2016 <-
   read_stata("/Users/guan/Documents/Knowledge Mining /Assignment 2 Knowledge Mining/TEDS_2016.dta")
+
+ggplot(data = TEDS_2016) +
+  geom_point(mapping = aes(x = age, y = income))
 ```
 
-
+At first glance, it is difficult to identify trends because a lot of the variables are binary (i.e. sex, party, whitecollar). 
