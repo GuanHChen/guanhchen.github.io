@@ -15,3 +15,6 @@ ggplot(data = TEDS_2016) +
 ```
 
 At first glance, it is difficult to identify trends because a lot of the variables are binary (i.e. sex, party, whitecollar). 
+
+Missing values can be handled by omitting the NA values.
+
