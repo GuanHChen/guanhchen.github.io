@@ -4,3 +4,11 @@ author: "Guan Chen"
 toc: false
 ---
 
+```{r}
+library(haven)
+library(tidyverse)
+TEDS_2016 <-
+  read_stata("/Users/guan/Documents/Knowledge Mining /Assignment 2 Knowledge Mining/TEDS_2016.dta")
+```
+
+

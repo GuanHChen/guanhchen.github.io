@@ -159,5 +159,12 @@
     "title": "EPPS 6323: Lab02 R programming basics II",
     "section": "",
     "text": "summary(lm(medv~lstat*age,data=Boston))\n\n\nCall:\nlm(formula = medv ~ lstat * age, data = Boston)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-15.806  -4.045  -1.333   2.085  27.552 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 36.0885359  1.4698355  24.553  &lt; 2e-16 ***\nlstat       -1.3921168  0.1674555  -8.313 8.78e-16 ***\nage         -0.0007209  0.0198792  -0.036   0.9711    \nlstat:age    0.0041560  0.0018518   2.244   0.0252 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 6.149 on 502 degrees of freedom\nMultiple R-squared:  0.5557,    Adjusted R-squared:  0.5531 \nF-statistic: 209.3 on 3 and 502 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "assignment2.html",
+    "href": "assignment2.html",
+    "title": "Assignment 2",
+    "section": "",
+    "text": "library(haven)\nlibrary(tidyverse)\nTEDS_2016 &lt;-\n  read_stata(\"/Users/guan/Documents/Knowledge Mining /Assignment 2 Knowledge Mining/TEDS_2016.dta\")"
   }
 ]
