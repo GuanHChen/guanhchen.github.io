@@ -7,19 +7,20 @@ project:
 website:
   title: "Guan Chen"
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
+    right:
+      - cv.qmd
+      - href: proposal.qmd
+        text: Project Proposal
       - text: Assignments
         menu:
           - href: assignment1.qmd
             text: Assignment 1
-      - cv.qmd
-    
-    right: 
-      - menu: 
-        - href: proposal.qmd
-          text: Project Proposal
+          - href: assignment2.qmd
+            text: Assignment 2
+          - href: lab01.qmd
+            text: Assignment 2 - Lab 1
+          - href: lab02.qmd
+            text: Assignment 2 - Lab 2
 
 format:
   html:

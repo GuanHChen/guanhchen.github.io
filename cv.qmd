@@ -7,5 +7,4 @@ title: "CV"
 
 </object>
 ```
-
-![CV](/Users/guan/Documents/guanhchen.github.io/Guan Chen Resume 24S.pdf)
+![CV](/Users/guan/Documents/guanhchen.github.io/Guan%20Chen%20Resume%2024S.pdf)
