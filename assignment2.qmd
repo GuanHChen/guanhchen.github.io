@@ -62,9 +62,11 @@ ggplot(TEDS_2016, aes(votetsai)) +
   geom_bar(width = 0.5, aes(weight = Tondu)) +
   labs(x = "Vote Tsai", y = "Tondu")
 
-tondu<-as.numeric(TEDS_2016$Tondu,labels=c("Unification now”,
-“Status quo, unif. in future”, “Status quo, decide later", "Status quo
-forever", "Status quo, indep. in future", "Independence now”, “No response"))
+table(TEDS_2016$Tondu)
 
-tondu
+#Tondu Frequency
+ggplot(TEDS_2016, aes(Tondu)) +
+  geom_bar() +
+  scale_x_continuous(breaks=c(0:10)) +
+  labs(y = "Frequency")
 ```
