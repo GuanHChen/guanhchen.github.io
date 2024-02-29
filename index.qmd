@@ -2,20 +2,42 @@
 toc: false
 ---
 
-### About Me <i class="bi bi-rocket-takeoff-fill"></i>
+<!--
+
+<div style="float: left; margin: 1px;">
+  <img src="images/Guan Circular Photo.png" alt="Description of the image" width="300" height="300">
+</div>
+
+-->
+
+## About Me 
+<!-- <i class="bi bi-rocket-takeoff-fill"></i> -->
 
 ::: grid
-::: g-col-4
-![](images/Guan Chen (2) square.jpg){fig-align="left" width="2000"}
+::: g-col-5
+![](images/Wordpicturephoto.png){fig-align="left" width="400"}
 :::
 
-::: g-col-8
+::: g-col-7
+
 Hello! I am currently a master's student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background as a scientist in bacterial genetics and membrane biology. My goal is to enhance my analytical abilities and pursue a career in data science. 
 
 Please feel free to look around my website and learn more about me!
 :::
 :::
 
-### Contact Me
+### Get In Touch
 
-[guan.chen\@utdallas.edu](mailto:guan.chen@utdallas.edu)
+<!-- [guan.chen\@utdallas.edu](mailto:guan.chen@utdallas.edu) -->
+
+<a href="mailto:guan.chen@utdallas.edu">
+  <i class="bi bi-envelope-paper-fill" style="font-size: 24px;"></i>
+</a>    
+
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+  <i class="bi bi-telephone-fill" style="font-size: 24px;"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/guan-chen-983371198/" target="_blank">
+  <i class="bi bi-linkedin" style="font-size: 24px;"></i>
+</a>

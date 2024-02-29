@@ -8,11 +8,12 @@ website:
   title: "Guan Chen"
   navbar:
     right:
-      - cv.qmd
-      - href: knowledgemining/proposal.qmd
-        text: Project Proposal
+      - href: Guan Chen Resume 24S.pdf
+        text: CV
       - text: Knowledge Mining
         menu:
+          - href: knowledgemining/proposal.qmd
+            text: Project Proposal
           - href: knowledgemining/assignment1.qmd
             text: Assignment 1
           - href: knowledgemining/assignment2.qmd
@@ -25,7 +26,7 @@ website:
 
 format:
   html:
-    theme: yeti
+    theme: cyborg
     css: styles.css
     toc: true
     warning: false

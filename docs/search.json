@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Guan Chen",
     "section": "",
-    "text": "About Me \n\n\n\n\n\n\n\n\n\nHello! I am currently a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background as a scientist in bacterial genetics and membrane biology. My goal is to enhance my analytical abilities and pursue a career in data science.\nPlease feel free to look around my website and learn more about me!\n\n\n\n\nContact Me\nguan.chen@utdallas.edu"
+    "text": "Hello! I am currently a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background as a scientist in bacterial genetics and membrane biology. My goal is to enhance my analytical abilities and pursue a career in data science.\nPlease feel free to look around my website and learn more about me!"
   },
   {
     "objectID": "work.html",
@@ -187,5 +187,12 @@
     "title": "Assignment 2",
     "section": "",
     "text": "library(haven)\nlibrary(tidyverse)\nTEDS_2016 &lt;-\n  read_stata(\"/Users/guan/Documents/Knowledge Mining /Assignment 2 Knowledge Mining/TEDS_2016.dta\")\n\n#Tondu vs Unification\nggplot(TEDS_2016, aes(Tondu)) +\n  geom_bar(aes(weight = Unification)) +\n  labs(x = \"Tondu\", y = \"Unification\")\n\n\n\n\n\n\n\n\nAt first glance, it is difficult to identify trends because a lot of the variables are binary (i.e. sex, party, whitecollar).\nMissing values can be handled by omitting the NA values.\n\n#Tondu vs female\nggplot(TEDS_2016, aes(female)) +\n  geom_bar(width = 0.5, aes(weight = Tondu)) +\n  labs(x = \"Sex\", y = \"Tondu\") \n\n\n\n\n\n\n\n#Tondu vs DPP\nggplot(TEDS_2016, aes(DPP)) +\n  geom_bar(width = 0.5, aes(weight = Tondu)) +\n  labs(x = \"DPP\", y = \"Tondu\")\n\n\n\n\n\n\n\n#Tondu vs age\nggplot(TEDS_2016, aes(age)) +\n  geom_bar(aes(weight = Tondu)) +\n  labs(x = \"Age\", y = \"Tondu\")\n\n\n\n\n\n\n\n#Tondu vs income\nggplot(TEDS_2016, aes(income)) +\n  geom_bar(aes(weight = Tondu)) +\n  labs(x = \"Income\", y = \"Tondu\")\n\n\n\n\n\n\n\n#Tondu vs edu\nggplot(TEDS_2016, aes(edu)) +\n  geom_bar(aes(weight = Tondu)) +\n  labs(x = \"Education\", y = \"Tondu\")\n\n\n\n\n\n\n\n#Tondu vs Taiwanese\nggplot(TEDS_2016, aes(Taiwanese)) +\n  geom_bar(width = 0.5, aes(weight = Tondu)) +\n  labs(x = \"Taiwanese\", y = \"Tondu\")\n\n\n\n\n\n\n\n#Tondu vs Econ_worse\nggplot(TEDS_2016, aes(Econ_worse)) +\n  geom_bar(width = 0.5, aes(weight = Tondu)) +\n  labs(x = \"Worse Economy\", y = \"Tondu\")\n\n\n\n\n\n\n\n#Tondu vs votetsai\nggplot(TEDS_2016, aes(votetsai)) +\n  geom_bar(width = 0.5, aes(weight = Tondu)) +\n  labs(x = \"Vote Tsai\", y = \"Tondu\")\n\n\n\n\n\n\n\ntable(TEDS_2016$Tondu)\n\n\n  1   2   3   4   5   6   9 \n 27 180 546 328 380 108 121 \n\n#Tondu Frequency\nggplot(TEDS_2016, aes(Tondu)) +\n  geom_bar() +\n  scale_x_continuous(breaks=c(0:10)) +\n  labs(y = \"Frequency\")\n\n\n\n\n\n\n\n#install.packages(\"descr\")\n#descr::freq(TEDS_2016$Tondu)"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Guan Chen",
+    "section": "",
+    "text": "Hello! I am currently a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background as a scientist in bacterial genetics and membrane biology. My goal is to enhance my analytical abilities and pursue a career in data science.\nPlease feel free to look around my website and learn more about me!"
   }
 ]
