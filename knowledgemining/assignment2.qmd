@@ -1,6 +1,7 @@
 ---
 title: "Assignment 2"
 author: "Guan Chen"
+date: last-modified
 toc: false
 ---
 
@@ -69,4 +70,7 @@ ggplot(TEDS_2016, aes(Tondu)) +
   geom_bar() +
   scale_x_continuous(breaks=c(0:10)) +
   labs(y = "Frequency")
+
+#install.packages("descr")
+#descr::freq(TEDS_2016$Tondu)
 ```

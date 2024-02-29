@@ -1,6 +1,7 @@
 ---
 title: "Assignment 1"
 author: "Guan Chen"
+date: last-modified
 toc: false
 ---
 

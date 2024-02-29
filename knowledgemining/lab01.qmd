@@ -1,15 +1,20 @@
 ---
 title: "EPPS 6323: Lab01 R programming basics I"
 author: "Guan Chen"
+date: last-modified
 format: html
 editor: visual
 ---
 
 # R Programming Basic Commands
 
+$$
+y = mx + b
+$$
+
 ## Create object using the assignment operator (\<-, =)
 
-```{r}
+```{r chunky, echo=FALSE}
 x <- c(1,3,2,5)
 x
 x = c(1,6,2)

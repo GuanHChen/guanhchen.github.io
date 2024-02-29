@@ -9,18 +9,19 @@ website:
   navbar:
     right:
       - cv.qmd
-      - href: proposal.qmd
+      - href: knowledgemining/proposal.qmd
         text: Project Proposal
-      - text: Assignments
+      - text: Knowledge Mining
         menu:
-          - href: assignment1.qmd
+          - href: knowledgemining/assignment1.qmd
             text: Assignment 1
-          - href: assignment2.qmd
+          - href: knowledgemining/assignment2.qmd
             text: Assignment 2
-          - href: lab01.qmd
+          - href: knowledgemining/lab01.qmd
             text: Assignment 2 - Lab 1
-          - href: lab02.qmd
+          - href: knowledgemining/lab02.qmd
             text: Assignment 2 - Lab 2
+      - text: Information Management
 
 format:
   html:
