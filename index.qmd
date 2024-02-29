@@ -30,14 +30,16 @@ Please feel free to look around my website and learn more about me!
 
 <!-- [guan.chen\@utdallas.edu](mailto:guan.chen@utdallas.edu) -->
 
-<a href="mailto:guan.chen@utdallas.edu">
-  <i class="bi bi-envelope-paper-fill" style="font-size: 24px;"></i>
-</a>    
-
-<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-  <i class="bi bi-telephone-fill" style="font-size: 24px;"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/guan-chen-983371198/" target="_blank">
-  <i class="bi bi-linkedin" style="font-size: 24px;"></i>
-</a>
+<div style="display: flex; gap: 23px;">
+  <a href="mailto:guan.chen@utdallas.edu">
+    <i class="bi bi-envelope-paper-fill" style="font-size: 30px;"></i>
+  </a>   
+  
+  <a href="https://www.yout-ube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+    <i class="bi bi-telephone-fill" style="font-size: 30px;"></i>
+  </a>
+  
+  <a href="https://www.linkedin.com/in/guan-chen-983371198/" target="_blank">
+   <i class="bi bi-linkedin" style="font-size: 30px;"></i>
+  </a>
+</div>
