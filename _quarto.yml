@@ -23,6 +23,9 @@ website:
           - href: knowledgemining/lab02.qmd
             text: Assignment 2 - Lab 2
       - text: Information Management
+        menu: 
+          - href: informationmanagement/project.qmd
+          - text: Project Proposal
 
 format:
   html:
