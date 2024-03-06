@@ -22,10 +22,14 @@ website:
             text: Assignment 2 - Lab 1
           - href: knowledgemining/lab02.qmd
             text: Assignment 2 - Lab 2
+          - href: knowledgemining/lab03.qmd
+            text: Assignment 3 - Lab 3 
+          - href: knowledgemining/assignment4.qmd
+            text: Assignment 4
       - text: Information Management
         menu: 
-          - href: informationmanagement/project.qmd
-          - text: Project Proposal
+          - href: informationmanagement/2024-2-29chenproposal.pptx
+            text: Project Proposal
 
 format:
   html:

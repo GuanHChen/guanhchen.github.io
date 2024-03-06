@@ -22,11 +22,11 @@ toc: false
 <!-- <i class="bi bi-rocket-takeoff-fill"></i> -->
 
 ::: grid
-::: g-col-3
+::: g-col-4
 ![](images/Wordpicturephoto.png){width="100%"}
 :::
 
-::: g-col-9
+::: g-col-8
 
 <!-- ::: card -->
 <!-- ::: card-body -->
