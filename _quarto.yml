@@ -8,38 +8,38 @@ website:
   title: "Guan Chen"
   navbar:
     right:
-      - href: personalstatement.qmd
+      - href: qtfiles/personalstatement.qmd
         text: Personal Statement
-        target: "_blank"
-      - href: Guan Chen Resume 24S.pdf
+      - href: other/Guan Chen Resume 24S.pdf
         text: CV
         target: "_blank"
       - text: Knowledge Mining
-        menu:
-          - href: knowledgemining/proposal.qmd
+        menu: 
+          - href: 6323/proposal.qmd
             text: Project Proposal
-          - href: knowledgemining/assignment1.qmd
+          - href: 6323/assignment1.qmd
             text: Assignment 1
-          - href: knowledgemining/assignment2.qmd
+          - href: 6323/assignment2.qmd
             text: Assignment 2
-          - href: knowledgemining/lab01.qmd
+          - href: 6323/lab01.qmd
             text: Assignment 2 - Lab 1
-          - href: knowledgemining/lab02.qmd
+          - href: 6323/lab02.qmd
             text: Assignment 2 - Lab 2
-          - href: knowledgemining/lab03.qmd
+          - href: 6323/lab03.qmd
             text: Assignment 3 - Lab 3 
-          - href: knowledgemining/assignment4.qmd
+          - href: 6323/assignment4.qmd
             text: Assignment 4
       - text: Information Management
         menu: 
-          - href: informationmanagement/2024-2-29chenproposal.pptx
+          - href: 6354/2024-2-29chenproposal.pptx
             text: Project Proposal
             target: "_blank"
-
+          - href: 6354/assignment1.qmd
+            text: Assignment 1
 format:
   html:
     theme: cyborg
-    css: styles.css
+    css: other/styles.css
     toc: true
     warning: false
     error: false

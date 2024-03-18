@@ -1,0 +1,22 @@
+---
+title: "Information Management (EPPS 6354)"
+subtitle: "Assignment 1"
+author: "Guan Chen"
+date: last-modified
+toc: false
+---
+
+### 1: Name and describe three applications you have used that employed a database system to store and access persistent data. (e.g. airlines, online trade, banking, university system)
+
+
+### 2. Propose three applications in domain projects (e.g. criminology, economics, brain science, etc.) Be sure you include:
+i. Purpose
+ii. Functions
+iii. Simple interface design
+3. If data can be retrieved efficiently and effectively, why data mining is needed?
+4. Why NoSQL systems emerged in the 2000s? Briefly contrast their features with traditional
+database systems.
+5. What are the things current database system cannot do?
+6. Describe at least three tables that might be used to store information in a social-network/social
+media system such as Twitter or Reddit.
+
