@@ -1,0 +1,14 @@
+---
+title: "Information Management (EPPS 6354)"
+subtitle: "Assignment 2"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+1. What are the differences between relation schema, relation and instance? Give an example using the university database to illustrate.
+2. Draw a schema diagram for the following bank database:
+3. Consider the above bank database. Assume that branch names (branch_name)and customer names (customer_name)uniquely identify branches and customers, but loans and accounts can be associated with more than one customer.
+i. What are the appropriate primary keys? (Underline each in diagram)
+ii. Given your choice of primary keys, identify appropriate foreign keys.

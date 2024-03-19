@@ -36,6 +36,8 @@ website:
             target: "_blank"
           - href: 6354/assignment1.qmd
             text: Assignment 1
+          - href: 6354/assignment2.qmd
+            text: Assignment 2
 format:
   html:
     theme: cyborg

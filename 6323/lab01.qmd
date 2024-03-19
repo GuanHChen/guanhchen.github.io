@@ -1,5 +1,5 @@
 ---
-title: "Knowledge Mining (EPPS 6323): Lab01 R programming basics I"
+title: "Knowledge Mining: Lab01 R programming basics I"
 author: "Guan Chen"
 date: last-modified
 format: html
