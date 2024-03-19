@@ -1,5 +1,5 @@
 ---
-title: "EPPS 6323: Lab03 R programming (Exploratory Data Analysis)"
+title: "Knowledge Mining (EPPS 6323): Lab03 R programming (Exploratory Data Analysis)"
 author: "Guan Chen"
 date: last-modified
 format: html

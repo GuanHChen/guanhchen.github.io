@@ -1,5 +1,6 @@
 ---
-title: "Assignment 4"
+title: "Knowledge Mining (EPPS 6323)"
+subtitle: "Assignment 4"
 author: "Guan Chen"
 date: last-modified
 toc: false

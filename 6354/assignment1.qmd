@@ -6,17 +6,47 @@ date: last-modified
 toc: false
 ---
 
-### 1: Name and describe three applications you have used that employed a database system to store and access persistent data. (e.g. airlines, online trade, banking, university system)
+#### 1: Name and describe three applications you have used that employed a database system to store and access persistent data. (e.g. airlines, online trade, banking, university system)
 
+Three applications the employ a database system include Reddit, Chase, and UTD Galaxy.
 
-### 2. Propose three applications in domain projects (e.g. criminology, economics, brain science, etc.) Be sure you include:
-i. Purpose
-ii. Functions
-iii. Simple interface design
-3. If data can be retrieved efficiently and effectively, why data mining is needed?
-4. Why NoSQL systems emerged in the 2000s? Briefly contrast their features with traditional
-database systems.
-5. What are the things current database system cannot do?
-6. Describe at least three tables that might be used to store information in a social-network/social
-media system such as Twitter or Reddit.
+#### 2. Propose three applications in domain projects (e.g. criminology, economics, brain science, etc.) Be sure you include:
 
+#### i.  Purpose
+#### ii. Functions
+#### iii. Simple interface design
+
+Application 1: Crime Rate Predictor
+This application will use historical data to predict the likelihood of data in a specified geographic location. Police can then be optimally stationed around the city, in position to deter the highest likelihood of crime. 
+
+Application 2: Spending Predictor
+This application will be used to predict your future spending in a given month based on historical data, accounting for holidays and unforeseen accidents. 
+
+Application 3: Flu Tracker
+This application is aimed for use in the medical industry, keeping track of historical trends relating to the flu. This will predict the number of flu cases and allow hospitals to stock the appropriate amount of supplies such as vaccines. 
+
+```{=html}
+<!-- -->
+```
+#### 3.  If data can be retrieved efficiently and effectively, why data mining is needed?
+
+Data requires analysis (mining) in order to be useful. The raw data itself often does not reveal any substantial information.
+
+#### 4.  Why NoSQL systems emerged in the 2000s? Briefly contrast their features with traditional database systems.
+
+NoSQL allows developers to store unstructured data and have dynamic schemas. Conversely, traditional database systems use structured query language (SQL) and have determined schemas. NoSQL databases are non-relational while SQL databases are relational. Finally, NoSQL databases are horizontally scalable while SQL databases are vertically scalable. 
+
+#### 5.  What are the things current database system cannot do?
+
+Current systems have scalability issues as well as query limitations. 
+
+#### 6.  Describe at least three tables that might be used to store information in a social-network/social media system such as Twitter or Reddit.
+
+User Table
+Stores information about specific users 
+
+Post Table
+Stores information about specific post and its content
+
+Relationship Table
+Stores information about likes, dislikes, shares, etc from users

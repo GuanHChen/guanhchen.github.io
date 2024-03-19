@@ -1,5 +1,6 @@
 ---
-title: "Assignment 2"
+title: "Knowledge Mining (EPPS 6323)"
+subtitle: "Assignment 2"
 author: "Guan Chen"
 date: last-modified
 toc: false
@@ -9,7 +10,7 @@ toc: false
 library(haven)
 library(tidyverse)
 TEDS_2016 <-
-  read_stata("/Users/guan/Documents/Knowledge Mining /Assignment 2 Knowledge Mining/TEDS_2016.dta")
+  read_stata("https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true")
 
 #Tondu vs Unification
 ggplot(TEDS_2016, aes(Tondu)) +

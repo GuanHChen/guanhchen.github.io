@@ -1,5 +1,5 @@
 ---
-title: "EPPS 6323: Lab02 R programming basics II"
+title: "Knowledge Mining (EPPS 6323): Lab02 R programming basics II"
 author: "Guan Chen"
 date: last-modified
 format: html
