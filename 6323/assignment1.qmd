@@ -4,6 +4,7 @@ subtitle: "Assignment 1"
 author: "Guan Chen"
 date: last-modified
 toc: false
+title-block-banner: true
 ---
 
 ### Review of "To explain or to predict" by Galit Shmueli and "Statistical modeling: The two cultures" by Leo Breiman

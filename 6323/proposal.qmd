@@ -3,6 +3,7 @@ title: "EPPS 6323.001 Project Proposal"
 author: "Stefanie Wang, Guan Chen, Santhoshi Rishitha, Tyler Merrill"
 date: last-modified
 toc: false
+title-block-banner: true
 ---
 
 #### Research Statement

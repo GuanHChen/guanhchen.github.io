@@ -4,6 +4,7 @@ subtitle: "Assignment 4"
 author: "Guan Chen"
 date: last-modified
 toc: false
+title-block-banner: true
 ---
 
 # Principal Components Analysis and Clustering Methods Workshop

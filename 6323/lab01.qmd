@@ -4,6 +4,7 @@ author: "Guan Chen"
 date: last-modified
 format: html
 editor: visual
+title-block-banner: true
 ---
 
 # R Programming Basic Commands
