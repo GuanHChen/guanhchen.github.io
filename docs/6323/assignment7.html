@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Guan Chen">
-<meta name="dcterms.date" content="2024-03-20">
+<meta name="dcterms.date" content="2024-04-10">
 
 <title>Guan Chen - Knowledge Mining (EPPS 6323)</title>
 <style>
@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Knowledge Mining (EPPS 6323)</h1>
-            <p class="subtitle lead">Assignment 4</p>
+            <p class="subtitle lead">Assignment 6</p>
                       </div>
   </div>
     
@@ -223,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 20, 2024</p>
+        <p class="date">April 10, 2024</p>
       </div>
     </div>
     
@@ -242,147 +242,143 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="principal-components-analysis-and-clustering-methods-workshop" class="level1">
-<h1>Principal Components Analysis and Clustering Methods Workshop</h1>
-<section id="principal-components-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="principal-components-analysis">Principal Components Analysis</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasets)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ISLR)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>arrest <span class="ot">=</span> USArrests</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>states <span class="ot">=</span> <span class="fu">row.names</span>(USArrests)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(ISLR)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check dataset Smarket</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>?Smarket</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Smarket)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Murder"   "Assault"  "UrbanPop" "Rape"    </code></pre>
+<pre><code>[1] "Year"      "Lag1"      "Lag2"      "Lag3"      "Lag4"      "Lag5"     
+[7] "Volume"    "Today"     "Direction"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(USArrests, <span class="dv">2</span>, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Smarket)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  Murder  Assault UrbanPop     Rape 
-   7.788  170.760   65.540   21.232 </code></pre>
+<pre><code>      Year           Lag1                Lag2                Lag3          
+ Min.   :2001   Min.   :-4.922000   Min.   :-4.922000   Min.   :-4.922000  
+ 1st Qu.:2002   1st Qu.:-0.639500   1st Qu.:-0.639500   1st Qu.:-0.640000  
+ Median :2003   Median : 0.039000   Median : 0.039000   Median : 0.038500  
+ Mean   :2003   Mean   : 0.003834   Mean   : 0.003919   Mean   : 0.001716  
+ 3rd Qu.:2004   3rd Qu.: 0.596750   3rd Qu.: 0.596750   3rd Qu.: 0.596750  
+ Max.   :2005   Max.   : 5.733000   Max.   : 5.733000   Max.   : 5.733000  
+      Lag4                Lag5              Volume           Today          
+ Min.   :-4.922000   Min.   :-4.92200   Min.   :0.3561   Min.   :-4.922000  
+ 1st Qu.:-0.640000   1st Qu.:-0.64000   1st Qu.:1.2574   1st Qu.:-0.639500  
+ Median : 0.038500   Median : 0.03850   Median :1.4229   Median : 0.038500  
+ Mean   : 0.001636   Mean   : 0.00561   Mean   :1.4783   Mean   : 0.003138  
+ 3rd Qu.: 0.596750   3rd Qu.: 0.59700   3rd Qu.:1.6417   3rd Qu.: 0.596750  
+ Max.   : 5.733000   Max.   : 5.73300   Max.   :3.1525   Max.   : 5.733000  
+ Direction 
+ Down:602  
+ Up  :648  
+           
+           
+           
+           </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(USArrests, <span class="dv">2</span>, var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Murder    Assault   UrbanPop       Rape 
-  18.97047 6945.16571  209.51878   87.72916 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pr.out<span class="ot">=</span><span class="fu">prcomp</span>(USArrests, <span class="at">scale=</span><span class="cn">TRUE</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pr.out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "sdev"     "rotation" "center"   "scale"    "x"       </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pr.out<span class="sc">$</span>center</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Murder  Assault UrbanPop     Rape 
-   7.788  170.760   65.540   21.232 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pr.out<span class="sc">$</span>scale</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Murder   Assault  UrbanPop      Rape 
- 4.355510 83.337661 14.474763  9.366385 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pr.out<span class="sc">$</span>rotation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                PC1        PC2        PC3         PC4
-Murder   -0.5358995 -0.4181809  0.3412327  0.64922780
-Assault  -0.5831836 -0.1879856  0.2681484 -0.74340748
-UrbanPop -0.2781909  0.8728062  0.3780158  0.13387773
-Rape     -0.5434321  0.1673186 -0.8177779  0.08902432</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(pr.out<span class="sc">$</span>x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 50  4</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pr.out<span class="sc">$</span>rotation<span class="ot">=</span><span class="sc">-</span>pr.out<span class="sc">$</span>rotation</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pr.out<span class="sc">$</span>x<span class="ot">=</span><span class="sc">-</span>pr.out<span class="sc">$</span>x</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">biplot</span>(pr.out, <span class="at">scale=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe for data browsing</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sm<span class="ot">=</span>Smarket</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Bivariate Plot of inter-lag correlations</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(Smarket,<span class="at">col=</span>Smarket<span class="sc">$</span>Direction,<span class="at">cex=</span>.<span class="dv">5</span>, <span class="at">pch=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="assignment4_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="assignment7_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pr.out<span class="sc">$</span>sdev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Logistic regression</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>glm.fit<span class="ot">=</span><span class="fu">glm</span>(Direction<span class="sc">~</span>Lag1<span class="sc">+</span>Lag2<span class="sc">+</span>Lag3<span class="sc">+</span>Lag4<span class="sc">+</span>Lag5<span class="sc">+</span>Volume,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">data=</span>Smarket,<span class="at">family=</span>binomial)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm.fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.5748783 0.9948694 0.5971291 0.4164494</code></pre>
+<pre><code>
+Call:
+glm(formula = Direction ~ Lag1 + Lag2 + Lag3 + Lag4 + Lag5 + 
+    Volume, family = binomial, data = Smarket)
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)
+(Intercept) -0.126000   0.240736  -0.523    0.601
+Lag1        -0.073074   0.050167  -1.457    0.145
+Lag2        -0.042301   0.050086  -0.845    0.398
+Lag3         0.011085   0.049939   0.222    0.824
+Lag4         0.009359   0.049974   0.187    0.851
+Lag5         0.010313   0.049511   0.208    0.835
+Volume       0.135441   0.158360   0.855    0.392
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1731.2  on 1249  degrees of freedom
+Residual deviance: 1727.6  on 1243  degrees of freedom
+AIC: 1741.6
+
+Number of Fisher Scoring iterations: 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>pr.var<span class="ot">=</span>pr.out<span class="sc">$</span>sdev<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pr.var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>glm.probs<span class="ot">=</span><span class="fu">predict</span>(glm.fit,<span class="at">type=</span><span class="st">"response"</span>) </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>glm.probs[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.4802416 0.9897652 0.3565632 0.1734301</code></pre>
+<pre><code>        1         2         3         4         5 
+0.5070841 0.4814679 0.4811388 0.5152224 0.5107812 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>pve<span class="ot">=</span>pr.var<span class="sc">/</span><span class="fu">sum</span>(pr.var)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>pve</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>glm.pred<span class="ot">=</span><span class="fu">ifelse</span>(glm.probs<span class="sc">&gt;</span><span class="fl">0.5</span>,<span class="st">"Up"</span>,<span class="st">"Down"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Smarket)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(glm.pred,Direction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.62006039 0.24744129 0.08914080 0.04335752</code></pre>
+<pre><code>        Direction
+glm.pred Down  Up
+    Down  145 141
+    Up    457 507</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pve, <span class="at">xlab=</span><span class="st">"Principal Component"</span>, <span class="at">ylab=</span><span class="st">"Proportion of Variance Explained"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">type=</span><span class="st">'b'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="assignment4_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(glm.pred<span class="sc">==</span>Direction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5216</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make training and test set for prediction</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>train <span class="ot">=</span> Year<span class="sc">&lt;</span><span class="dv">2005</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>glm.fit<span class="ot">=</span><span class="fu">glm</span>(Direction<span class="sc">~</span>Lag1<span class="sc">+</span>Lag2<span class="sc">+</span>Lag3<span class="sc">+</span>Lag4<span class="sc">+</span>Lag5<span class="sc">+</span>Volume,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">data=</span>Smarket,<span class="at">family=</span>binomial, <span class="at">subset=</span>train)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>glm.probs<span class="ot">=</span><span class="fu">predict</span>(glm.fit,<span class="at">newdata=</span>Smarket[<span class="sc">!</span>train,],<span class="at">type=</span><span class="st">"response"</span>) </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>glm.pred<span class="ot">=</span><span class="fu">ifelse</span>(glm.probs <span class="sc">&gt;</span><span class="fl">0.5</span>,<span class="st">"Up"</span>,<span class="st">"Down"</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>Direction<span class="fl">.2005</span><span class="ot">=</span>Smarket<span class="sc">$</span>Direction[<span class="sc">!</span>train]</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(glm.pred,Direction<span class="fl">.2005</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        Direction.2005
+glm.pred Down Up
+    Down   77 97
+    Up     34 44</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">cumsum</span>(pve), <span class="at">xlab=</span><span class="st">"Principal Component"</span>, <span class="at">ylab=</span><span class="st">"Cumulative Proportion of Variance Explained"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">type=</span><span class="st">'b'</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="assignment4_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(glm.pred<span class="sc">==</span>Direction<span class="fl">.2005</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4801587</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit smaller model</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>glm.fit<span class="ot">=</span><span class="fu">glm</span>(Direction<span class="sc">~</span>Lag1<span class="sc">+</span>Lag2,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">data=</span>Smarket,<span class="at">family=</span>binomial, <span class="at">subset=</span>train)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>glm.probs<span class="ot">=</span><span class="fu">predict</span>(glm.fit,<span class="at">newdata=</span>Smarket[<span class="sc">!</span>train,],<span class="at">type=</span><span class="st">"response"</span>) </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>glm.pred<span class="ot">=</span><span class="fu">ifelse</span>(glm.probs <span class="sc">&gt;</span><span class="fl">0.5</span>,<span class="st">"Up"</span>,<span class="st">"Down"</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(glm.pred,Direction<span class="fl">.2005</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        Direction.2005
+glm.pred Down  Up
+    Down   35  35
+    Up     76 106</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz</span>(pr.out, <span class="st">"ind"</span>, <span class="at">geom =</span> <span class="st">"auto"</span>, <span class="at">mean.point =</span> <span class="cn">TRUE</span>, <span class="at">font.family =</span> <span class="st">"Georgia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="assignment4_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(glm.pred<span class="sc">==</span>Direction<span class="fl">.2005</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5595238</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check accuracy rate</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="dv">106</span><span class="sc">/</span>(<span class="dv">76</span><span class="sc">+</span><span class="dv">106</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5824176</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_biplot</span>(pr.out, <span class="at">font.family =</span> <span class="st">"Georgia"</span>, <span class="at">col.var=</span><span class="st">"firebrick1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="assignment4_files/figure-html/unnamed-chunk-1-5.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Can you interpret the results?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-</section>
-<section id="k-means-clustering" class="level2">
-<h2 class="anchored" data-anchor-id="k-means-clustering">K Means Clustering</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>computers <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/guru99-edu/R-Programming/master/computers.csv"</span>) </span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Only retain two variables for illustration</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>rescaled_comp <span class="ot">&lt;-</span> computers[<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>] <span class="sc">%&gt;%</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hd_scal =</span> <span class="fu">scale</span>(hd),</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">ram_scal =</span> <span class="fu">scale</span>(ram)) <span class="sc">%&gt;%</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(hd_scal, ram_scal))</span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rescaled_comp, <span class="fu">aes</span>(<span class="at">x =</span> hd_scal, <span class="at">y =</span> ram_scal)) <span class="sc">+</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">pch=</span><span class="dv">20</span>, <span class="at">col =</span> <span class="st">"blue"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Hard drive size (Scaled)"</span>, <span class="at">y =</span><span class="st">"RAM size (Scaled)"</span> ) <span class="sc">+</span></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family=</span><span class="st">"Georgia"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="assignment4_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<p>1: What are the requirements of LDA? Predictor variables are normally distributed. Each predictor variable has the same variance.</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

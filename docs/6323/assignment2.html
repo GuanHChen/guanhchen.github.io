@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Guan Chen">
-<meta name="dcterms.date" content="2024-03-20">
+<meta name="dcterms.date" content="2024-04-10">
 
 <title>Guan Chen - Knowledge Mining (EPPS 6323)</title>
 <style>
@@ -169,6 +169,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../6323/lab04.html">
  <span class="dropdown-text">Assignment 5</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/assignment6.html">
+ <span class="dropdown-text">Assignment 6</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -219,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 20, 2024</p>
+        <p class="date">April 10, 2024</p>
       </div>
     </div>
     
@@ -241,13 +245,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>TEDS_2016 <span class="ot">&lt;-</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_stata</span>(<span class="st">"https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Tondu vs Unification</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TEDS_2016, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">weight =</span> Unification)) <span class="sc">+</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tondu"</span>, <span class="at">y =</span> <span class="st">"Unification"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>TEDS_2016 <span class="ot">&lt;-</span> <span class="fu">read_stata</span>(<span class="st">"https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Tondu vs Unification</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TEDS_2016, <span class="fu">aes</span>(Tondu)) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">weight =</span> Unification)) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tondu"</span>, <span class="at">y =</span> <span class="st">"Unification"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

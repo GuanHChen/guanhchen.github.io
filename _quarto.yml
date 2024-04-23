@@ -31,6 +31,9 @@ website:
             text: Assignment 4
           - href: 6323/lab04.qmd
             text: Assignment 5
+          - href: 6323/assignment6.qmd
+            text: Assignment 6
+            
       - text: Information Management
         menu: 
           - href: 6354/2024-2-29chenproposal.pptx

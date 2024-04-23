@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Guan Chen">
+<meta name="dcterms.date" content="2024-04-23">
+
+<title>Guan Chen - Knowledge Mining (EPPS 6323)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../other/styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Guan Chen</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../qtfiles/personalstatement.html"> 
+<span class="menu-text">Personal Statement</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../other/Guan Chen Resume 24S.pdf" target="_blank"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-knowledge-mining" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Knowledge Mining</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-knowledge-mining">    
+        <li>
+    <a class="dropdown-item" href="../6323/proposal.html">
+ <span class="dropdown-text">Project Proposal</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/assignment1.html">
+ <span class="dropdown-text">Assignment 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/assignment2.html">
+ <span class="dropdown-text">Assignment 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/lab01.html">
+ <span class="dropdown-text">Assignment 2 - Lab 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/lab02.html">
+ <span class="dropdown-text">Assignment 2 - Lab 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/lab03.html">
+ <span class="dropdown-text">Assignment 3 - Lab 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/assignment4.html">
+ <span class="dropdown-text">Assignment 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/lab04.html">
+ <span class="dropdown-text">Assignment 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/assignment6.html">
+ <span class="dropdown-text">Assignment 6</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-information-management" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Information Management</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-information-management">    
+        <li>
+    <a class="dropdown-item" href="../6354/2024-2-29chenproposal.pptx" target="_blank">
+ <span class="dropdown-text">Project Proposal</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6354/assignment1.html">
+ <span class="dropdown-text">Assignment 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6354/assignment2.html">
+ <span class="dropdown-text">Assignment 2</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Knowledge Mining (EPPS 6323)</h1>
+            <p class="subtitle lead">Assignment 6</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Guan Chen </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 23, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c("easypackages","MASS","ISLR","arm"))</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easypackages)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">libraries</span>(<span class="st">"arm"</span>,<span class="st">"MASS"</span>,<span class="st">"ISLR"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Load datasets from MASS and ISLR packages</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Boston)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">### Simple linear regression</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Boston)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "crim"    "zn"      "indus"   "chas"    "nox"     "rm"      "age"    
+ [8] "dis"     "rad"     "tax"     "ptratio" "black"   "lstat"   "medv"   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the Boston dataset?                                                </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>?Boston</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(medv<span class="sc">~</span>lstat,Boston, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span>.<span class="dv">8</span>, <span class="at">col=</span><span class="st">"steelblue"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>fit1<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>lstat,<span class="at">data=</span>Boston)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>fit1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = medv ~ lstat, data = Boston)
+
+Coefficients:
+(Intercept)        lstat  
+      34.55        -0.95  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = medv ~ lstat, data = Boston)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-15.168  -3.990  -1.318   2.034  24.500 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 34.55384    0.56263   61.41   &lt;2e-16 ***
+lstat       -0.95005    0.03873  -24.53   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.216 on 504 degrees of freedom
+Multiple R-squared:  0.5441,    Adjusted R-squared:  0.5432 
+F-statistic: 601.6 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit1,<span class="at">col=</span><span class="st">"firebrick"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "coefficients"  "residuals"     "effects"       "rank"         
+ [5] "fitted.values" "assign"        "qr"            "df.residual"  
+ [9] "xlevels"       "call"          "terms"         "model"        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(fit1) <span class="co"># confidence intervals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                2.5 %     97.5 %
+(Intercept) 33.448457 35.6592247
+lstat       -1.026148 -0.8739505</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predictions using values in lstat</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(fit1,<span class="fu">data.frame</span>(<span class="at">lstat=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">15</span>)),<span class="at">interval=</span><span class="st">"confidence"</span>) <span class="co"># confidence intervals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       fit      lwr      upr
+1 34.55384 33.44846 35.65922
+2 29.80359 29.00741 30.59978
+3 25.05335 24.47413 25.63256
+4 20.30310 19.73159 20.87461</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(fit1,<span class="fu">data.frame</span>(<span class="at">lstat=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">15</span>)),<span class="at">interval=</span><span class="st">"prediction"</span>) <span class="co"># prediction intervals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       fit       lwr      upr
+1 34.55384 22.291923 46.81576
+2 29.80359 17.565675 42.04151
+3 25.05335 12.827626 37.27907
+4 20.30310  8.077742 32.52846</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prediction interval uses sample mean and takes into account the variability of the estimators for μ and σ.</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Therefore, the interval will be wider.</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">### Multiple linear regression</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>fit2<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>lstat<span class="sc">+</span>age,<span class="at">data=</span>Boston)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = medv ~ lstat + age, data = Boston)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-15.981  -3.978  -1.283   1.968  23.158 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 33.22276    0.73085  45.458  &lt; 2e-16 ***
+lstat       -1.03207    0.04819 -21.416  &lt; 2e-16 ***
+age          0.03454    0.01223   2.826  0.00491 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.173 on 503 degrees of freedom
+Multiple R-squared:  0.5513,    Adjusted R-squared:  0.5495 
+F-statistic:   309 on 2 and 503 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fit3<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>.,Boston)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = medv ~ ., data = Boston)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-15.595  -2.730  -0.518   1.777  26.199 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  3.646e+01  5.103e+00   7.144 3.28e-12 ***
+crim        -1.080e-01  3.286e-02  -3.287 0.001087 ** 
+zn           4.642e-02  1.373e-02   3.382 0.000778 ***
+indus        2.056e-02  6.150e-02   0.334 0.738288    
+chas         2.687e+00  8.616e-01   3.118 0.001925 ** 
+nox         -1.777e+01  3.820e+00  -4.651 4.25e-06 ***
+rm           3.810e+00  4.179e-01   9.116  &lt; 2e-16 ***
+age          6.922e-04  1.321e-02   0.052 0.958229    
+dis         -1.476e+00  1.995e-01  -7.398 6.01e-13 ***
+rad          3.060e-01  6.635e-02   4.613 5.07e-06 ***
+tax         -1.233e-02  3.760e-03  -3.280 0.001112 ** 
+ptratio     -9.527e-01  1.308e-01  -7.283 1.31e-12 ***
+black        9.312e-03  2.686e-03   3.467 0.000573 ***
+lstat       -5.248e-01  5.072e-02 -10.347  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 4.745 on 492 degrees of freedom
+Multiple R-squared:  0.7406,    Adjusted R-squared:  0.7338 
+F-statistic: 108.1 on 13 and 492 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit3,<span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span>.<span class="dv">8</span>, <span class="at">col=</span><span class="st">"steelblue"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="st">"fit3"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="sc">-</span> <span class="dv">2</span>, <span class="at">cex =</span> <span class="dv">2</span>, <span class="at">outer =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update function to re-specify the model, i.e. include all but age and indus variables</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fit4<span class="ot">=</span><span class="fu">update</span>(fit3,<span class="sc">~</span>.<span class="sc">-</span>age<span class="sc">-</span>indus)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = medv ~ crim + zn + chas + nox + rm + dis + rad + 
+    tax + ptratio + black + lstat, data = Boston)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-15.5984  -2.7386  -0.5046   1.7273  26.2373 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  36.341145   5.067492   7.171 2.73e-12 ***
+crim         -0.108413   0.032779  -3.307 0.001010 ** 
+zn            0.045845   0.013523   3.390 0.000754 ***
+chas          2.718716   0.854240   3.183 0.001551 ** 
+nox         -17.376023   3.535243  -4.915 1.21e-06 ***
+rm            3.801579   0.406316   9.356  &lt; 2e-16 ***
+dis          -1.492711   0.185731  -8.037 6.84e-15 ***
+rad           0.299608   0.063402   4.726 3.00e-06 ***
+tax          -0.011778   0.003372  -3.493 0.000521 ***
+ptratio      -0.946525   0.129066  -7.334 9.24e-13 ***
+black         0.009291   0.002674   3.475 0.000557 ***
+lstat        -0.522553   0.047424 -11.019  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 4.736 on 494 degrees of freedom
+Multiple R-squared:  0.7406,    Adjusted R-squared:  0.7348 
+F-statistic: 128.2 on 11 and 494 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the next plot configuration</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit4,<span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span>.<span class="dv">8</span>, <span class="at">col=</span><span class="st">"steelblue"</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="st">"fit4"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="sc">-</span> <span class="dv">2</span>, <span class="at">cex =</span> <span class="dv">2</span>, <span class="at">outer =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Uses coefplot to plot coefficients.  Note the line at 0.</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>arm<span class="sc">::</span><span class="fu">coefplot</span>(fit4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Nonlinear terms and Interactions</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>fit5<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>lstat<span class="sc">*</span>age,Boston) <span class="co"># include both variables and the interaction term x1:x2</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = medv ~ lstat * age, data = Boston)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-15.806  -4.045  -1.333   2.085  27.552 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 36.0885359  1.4698355  24.553  &lt; 2e-16 ***
+lstat       -1.3921168  0.1674555  -8.313 8.78e-16 ***
+age         -0.0007209  0.0198792  -0.036   0.9711    
+lstat:age    0.0041560  0.0018518   2.244   0.0252 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.149 on 502 degrees of freedom
+Multiple R-squared:  0.5557,    Adjusted R-squared:  0.5531 
+F-statistic: 209.3 on 3 and 502 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## I() identity function for squared term to interpret as-is</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Combine two command lines with semicolon</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>fit6<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>lstat <span class="sc">+</span><span class="fu">I</span>(lstat<span class="sc">^</span><span class="dv">2</span>),Boston); <span class="fu">summary</span>(fit6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = medv ~ lstat + I(lstat^2), data = Boston)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-15.2834  -3.8313  -0.5295   2.3095  25.4148 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 42.862007   0.872084   49.15   &lt;2e-16 ***
+lstat       -2.332821   0.123803  -18.84   &lt;2e-16 ***
+I(lstat^2)   0.043547   0.003745   11.63   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.524 on 503 degrees of freedom
+Multiple R-squared:  0.6407,    Adjusted R-squared:  0.6393 
+F-statistic: 448.5 on 2 and 503 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(medv<span class="sc">~</span>lstat, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">col=</span><span class="st">"forestgreen"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(lstat,<span class="fu">fitted</span>(fit6),<span class="at">col=</span><span class="st">"firebrick"</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>fit7<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span><span class="fu">poly</span>(lstat,<span class="dv">4</span>))</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(lstat,<span class="fu">fitted</span>(fit7),<span class="at">col=</span><span class="st">"steelblue"</span>,<span class="at">pch=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="do">###Qualitative predictors</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Carseats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Sales"       "CompPrice"   "Income"      "Advertising" "Population" 
+ [6] "Price"       "ShelveLoc"   "Age"         "Education"   "Urban"      
+[11] "US"         </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Carseats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Sales          CompPrice       Income        Advertising    
+ Min.   : 0.000   Min.   : 77   Min.   : 21.00   Min.   : 0.000  
+ 1st Qu.: 5.390   1st Qu.:115   1st Qu.: 42.75   1st Qu.: 0.000  
+ Median : 7.490   Median :125   Median : 69.00   Median : 5.000  
+ Mean   : 7.496   Mean   :125   Mean   : 68.66   Mean   : 6.635  
+ 3rd Qu.: 9.320   3rd Qu.:135   3rd Qu.: 91.00   3rd Qu.:12.000  
+ Max.   :16.270   Max.   :175   Max.   :120.00   Max.   :29.000  
+   Population        Price        ShelveLoc        Age          Education   
+ Min.   : 10.0   Min.   : 24.0   Bad   : 96   Min.   :25.00   Min.   :10.0  
+ 1st Qu.:139.0   1st Qu.:100.0   Good  : 85   1st Qu.:39.75   1st Qu.:12.0  
+ Median :272.0   Median :117.0   Medium:219   Median :54.50   Median :14.0  
+ Mean   :264.8   Mean   :115.8                Mean   :53.32   Mean   :13.9  
+ 3rd Qu.:398.5   3rd Qu.:131.0                3rd Qu.:66.00   3rd Qu.:16.0  
+ Max.   :509.0   Max.   :191.0                Max.   :80.00   Max.   :18.0  
+ Urban       US     
+ No :118   No :142  
+ Yes:282   Yes:258  
+                    
+                    
+                    
+                    </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fit1<span class="ot">=</span><span class="fu">lm</span>(Sales<span class="sc">~</span>.<span class="sc">+</span>Income<span class="sc">:</span>Advertising<span class="sc">+</span>Age<span class="sc">:</span>Price,Carseats) <span class="co"># add two interaction terms</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Sales ~ . + Income:Advertising + Age:Price, data = Carseats)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.9208 -0.7503  0.0177  0.6754  3.3413 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)         6.5755654  1.0087470   6.519 2.22e-10 ***
+CompPrice           0.0929371  0.0041183  22.567  &lt; 2e-16 ***
+Income              0.0108940  0.0026044   4.183 3.57e-05 ***
+Advertising         0.0702462  0.0226091   3.107 0.002030 ** 
+Population          0.0001592  0.0003679   0.433 0.665330    
+Price              -0.1008064  0.0074399 -13.549  &lt; 2e-16 ***
+ShelveLocGood       4.8486762  0.1528378  31.724  &lt; 2e-16 ***
+ShelveLocMedium     1.9532620  0.1257682  15.531  &lt; 2e-16 ***
+Age                -0.0579466  0.0159506  -3.633 0.000318 ***
+Education          -0.0208525  0.0196131  -1.063 0.288361    
+UrbanYes            0.1401597  0.1124019   1.247 0.213171    
+USYes              -0.1575571  0.1489234  -1.058 0.290729    
+Income:Advertising  0.0007510  0.0002784   2.698 0.007290 ** 
+Price:Age           0.0001068  0.0001333   0.801 0.423812    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.011 on 386 degrees of freedom
+Multiple R-squared:  0.8761,    Adjusted R-squared:  0.8719 
+F-statistic:   210 on 13 and 386 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Carseats)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(Carseats<span class="sc">$</span>ShelveLoc) <span class="co"># what is contrasts function?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Good Medium
+Bad       0      0
+Good      1      0
+Medium    0      1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>?contrasts</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="do">### Writing an R function to combine the lm, plot and abline functions to </span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="do">### create a one step regression fit plot function</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>regplot<span class="ot">=</span><span class="cf">function</span>(x,y){</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  fit<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x,y, <span class="at">pch=</span><span class="dv">20</span>)</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(fit,<span class="at">col=</span><span class="st">"firebrick"</span>)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Carseats)</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="fu">regplot</span>(Price,Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-6.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Allow extra room for additional arguments/specifications</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>regplot<span class="ot">=</span><span class="cf">function</span>(x,y,...){</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  fit<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x,y,...)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(fit,<span class="at">col=</span><span class="st">"firebrick"</span>)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">regplot</span>(Price,Sales,<span class="at">xlab=</span><span class="st">"Price"</span>,<span class="at">ylab=</span><span class="st">"Sales"</span>,<span class="at">col=</span><span class="st">"steelblue"</span>,<span class="at">pch=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-7.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Additional note: try out the coefplot2 package to finetune the coefplots</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="do">##install.packages("coefplot2", repos="http://www.math.mcmaster.ca/bolker/R", type="source")</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="do">## library(coefplot2)</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise </span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Try other combination of interactive terms</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># How to interpret interactive terms?</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Read: Brambor, T., Clark, W.R. and Golder, M., 2006. Understanding interaction models: Improving empirical analyses. Political analysis, 14(1), pp.63-82.</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># What are qualitative variables?  What class should they be? </span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>TEDS_2016 <span class="ot">&lt;-</span> <span class="fu">read_stata</span>(<span class="st">"https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true"</span>)</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>glm.vt <span class="ot">&lt;-</span> <span class="fu">glm</span>(votetsai<span class="sc">~</span>female, <span class="at">data =</span> TEDS_2016, <span class="at">family =</span> binomial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
