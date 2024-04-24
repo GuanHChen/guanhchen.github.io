@@ -1,6 +1,6 @@
 ---
 title: "Knowledge Mining (EPPS 6323)"
-subtitle: "Assignment 6"
+subtitle: "Assignment 7"
 author: "Guan Chen"
 date: last-modified
 toc: false
@@ -56,8 +56,4 @@ mean(glm.pred==Direction.2005)
 
 ```
 
-1: What are the requirements of LDA?
-Predictor variables are normally distributed. 
-Each predictor variable has the same variance.
-
-
+1: What are the requirements of LDA? Predictor variables are normally distributed. Each predictor variable has the same variance.
