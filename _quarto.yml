@@ -35,6 +35,8 @@ website:
             text: Assignment 6
           - href: 6323/assignment7.qmd
             text: Assignment 7
+          - href: 6323/assignment8.qmd
+            text: Assignment 8
             
       - text: Information Management
         menu: 
