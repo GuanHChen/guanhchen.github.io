@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Guan Chen">
-<meta name="dcterms.date" content="2024-04-23">
+<meta name="dcterms.date" content="2024-04-24">
 
 <title>Guan Chen - Knowledge Mining (EPPS 6323)</title>
 <style>
@@ -173,6 +173,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../6323/assignment6.html">
  <span class="dropdown-text">Assignment 6</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../6323/assignment7.html">
+ <span class="dropdown-text">Assignment 7</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -223,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 23, 2024</p>
+        <p class="date">April 24, 2024</p>
       </div>
     </div>
     
@@ -243,55 +247,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c("easypackages","MASS","ISLR","arm"))</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easypackages)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">libraries</span>(<span class="st">"arm"</span>,<span class="st">"MASS"</span>,<span class="st">"ISLR"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Load datasets from MASS and ISLR packages</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Boston)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">### Simple linear regression</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Boston)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "crim"    "zn"      "indus"   "chas"    "nox"     "rm"      "age"    
- [8] "dis"     "rad"     "tax"     "ptratio" "black"   "lstat"   "medv"   </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the Boston dataset?                                                </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>?Boston</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(medv<span class="sc">~</span>lstat,Boston, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span>.<span class="dv">8</span>, <span class="at">col=</span><span class="st">"steelblue"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>fit1<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>lstat,<span class="at">data=</span>Boston)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>fit1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = medv ~ lstat, data = Boston)
-
-Coefficients:
-(Intercept)        lstat  
-      34.55        -0.95  </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = medv ~ lstat, data = Boston)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--15.168  -3.990  -1.318   2.034  24.500 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 34.55384    0.56263   61.41   &lt;2e-16 ***
-lstat       -0.95005    0.03873  -24.53   &lt;2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 6.216 on 504 degrees of freedom
-Multiple R-squared:  0.5441,    Adjusted R-squared:  0.5432 
-F-statistic: 601.6 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(fit1,<span class="at">col=</span><span class="st">"firebrick"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(ISLR)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(MASS)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(descr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Smarket)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Linear Discriminant Analysis</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">freq</span>(Direction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -299,99 +261,36 @@ F-statistic: 601.6 on 1 and 504 DF,  p-value: &lt; 2.2e-16</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "coefficients"  "residuals"     "effects"       "rank"         
- [5] "fitted.values" "assign"        "qr"            "df.residual"  
- [9] "xlevels"       "call"          "terms"         "model"        </code></pre>
+<pre><code>Direction 
+      Frequency Percent
+Down        602   48.16
+Up          648   51.84
+Total      1250  100.00</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(fit1) <span class="co"># confidence intervals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>train <span class="ot">=</span> Year<span class="sc">&lt;</span><span class="dv">2005</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>lda.fit<span class="ot">=</span><span class="fu">lda</span>(Direction<span class="sc">~</span>Lag1<span class="sc">+</span>Lag2,<span class="at">data=</span>Smarket, <span class="at">subset=</span>Year<span class="sc">&lt;</span><span class="dv">2005</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>lda.fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                2.5 %     97.5 %
-(Intercept) 33.448457 35.6592247
-lstat       -1.026148 -0.8739505</code></pre>
+<pre><code>Call:
+lda(Direction ~ Lag1 + Lag2, data = Smarket, subset = Year &lt; 
+    2005)
+
+Prior probabilities of groups:
+    Down       Up 
+0.491984 0.508016 
+
+Group means:
+            Lag1        Lag2
+Down  0.04279022  0.03389409
+Up   -0.03954635 -0.03132544
+
+Coefficients of linear discriminants:
+            LD1
+Lag1 -0.6420190
+Lag2 -0.5135293</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predictions using values in lstat</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(fit1,<span class="fu">data.frame</span>(<span class="at">lstat=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">15</span>)),<span class="at">interval=</span><span class="st">"confidence"</span>) <span class="co"># confidence intervals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       fit      lwr      upr
-1 34.55384 33.44846 35.65922
-2 29.80359 29.00741 30.59978
-3 25.05335 24.47413 25.63256
-4 20.30310 19.73159 20.87461</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(fit1,<span class="fu">data.frame</span>(<span class="at">lstat=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">15</span>)),<span class="at">interval=</span><span class="st">"prediction"</span>) <span class="co"># prediction intervals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       fit       lwr      upr
-1 34.55384 22.291923 46.81576
-2 29.80359 17.565675 42.04151
-3 25.05335 12.827626 37.27907
-4 20.30310  8.077742 32.52846</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prediction interval uses sample mean and takes into account the variability of the estimators for μ and σ.</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Therefore, the interval will be wider.</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">### Multiple linear regression</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>fit2<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>lstat<span class="sc">+</span>age,<span class="at">data=</span>Boston)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = medv ~ lstat + age, data = Boston)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--15.981  -3.978  -1.283   1.968  23.158 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 33.22276    0.73085  45.458  &lt; 2e-16 ***
-lstat       -1.03207    0.04819 -21.416  &lt; 2e-16 ***
-age          0.03454    0.01223   2.826  0.00491 ** 
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 6.173 on 503 degrees of freedom
-Multiple R-squared:  0.5513,    Adjusted R-squared:  0.5495 
-F-statistic:   309 on 2 and 503 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fit3<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>.,Boston)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = medv ~ ., data = Boston)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--15.595  -2.730  -0.518   1.777  26.199 
-
-Coefficients:
-              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  3.646e+01  5.103e+00   7.144 3.28e-12 ***
-crim        -1.080e-01  3.286e-02  -3.287 0.001087 ** 
-zn           4.642e-02  1.373e-02   3.382 0.000778 ***
-indus        2.056e-02  6.150e-02   0.334 0.738288    
-chas         2.687e+00  8.616e-01   3.118 0.001925 ** 
-nox         -1.777e+01  3.820e+00  -4.651 4.25e-06 ***
-rm           3.810e+00  4.179e-01   9.116  &lt; 2e-16 ***
-age          6.922e-04  1.321e-02   0.052 0.958229    
-dis         -1.476e+00  1.995e-01  -7.398 6.01e-13 ***
-rad          3.060e-01  6.635e-02   4.613 5.07e-06 ***
-tax         -1.233e-02  3.760e-03  -3.280 0.001112 ** 
-ptratio     -9.527e-01  1.308e-01  -7.283 1.31e-12 ***
-black        9.312e-03  2.686e-03   3.467 0.000573 ***
-lstat       -5.248e-01  5.072e-02 -10.347  &lt; 2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 4.745 on 492 degrees of freedom
-Multiple R-squared:  0.7406,    Adjusted R-squared:  0.7338 
-F-statistic: 108.1 on 13 and 492 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit3,<span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span>.<span class="dv">8</span>, <span class="at">col=</span><span class="st">"steelblue"</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="st">"fit3"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="sc">-</span> <span class="dv">2</span>, <span class="at">cex =</span> <span class="dv">2</span>, <span class="at">outer =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lda.fit, <span class="at">col=</span><span class="st">"dodgerblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -399,44 +298,69 @@ F-statistic: 108.1 on 13 and 492 DF,  p-value: &lt; 2.2e-16</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update function to re-specify the model, i.e. include all but age and indus variables</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fit4<span class="ot">=</span><span class="fu">update</span>(fit3,<span class="sc">~</span>.<span class="sc">-</span>age<span class="sc">-</span>indus)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Smarket<span class="fl">.2005</span><span class="ot">=</span><span class="fu">subset</span>(Smarket,Year<span class="sc">==</span><span class="dv">2005</span>) <span class="co"># Creating subset with 2005 data for prediction</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>lda.pred<span class="ot">=</span><span class="fu">predict</span>(lda.fit,Smarket<span class="fl">.2005</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lda.pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "class"     "posterior" "x"        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lda.class<span class="ot">=</span>lda.pred<span class="sc">$</span>class</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Direction<span class="fl">.2005</span><span class="ot">=</span>Smarket<span class="sc">$</span>Direction[<span class="sc">!</span>train] </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(lda.class,Direction<span class="fl">.2005</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Direction.2005
+lda.class Down  Up
+     Down   35  35
+     Up     76 106</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(lda.pred)[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     class posterior.Down posterior.Up         LD1
+999     Up      0.4901792    0.5098208  0.08293096
+1000    Up      0.4792185    0.5207815  0.59114102
+1001    Up      0.4668185    0.5331815  1.16723063
+1002    Up      0.4740011    0.5259989  0.83335022
+1003    Up      0.4927877    0.5072123 -0.03792892</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(lda.pred<span class="sc">$</span>class,Smarket<span class="fl">.2005</span><span class="sc">$</span>Direction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      
+       Down  Up
+  Down   35  35
+  Up     76 106</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(lda.pred<span class="sc">$</span>class<span class="sc">==</span>Smarket<span class="fl">.2005</span><span class="sc">$</span>Direction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5595238</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>TEDS_2016 <span class="ot">&lt;-</span> <span class="fu">read_stata</span>(<span class="st">"https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>glm.vt <span class="ot">&lt;-</span> <span class="fu">glm</span>(votetsai<span class="sc">~</span>female, <span class="at">data =</span> TEDS_2016, <span class="at">family =</span> binomial)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm.vt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = medv ~ crim + zn + chas + nox + rm + dis + rad + 
-    tax + ptratio + black + lstat, data = Boston)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--15.5984  -2.7386  -0.5046   1.7273  26.2373 
+glm(formula = votetsai ~ female, family = binomial, data = TEDS_2016)
 
 Coefficients:
-              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  36.341145   5.067492   7.171 2.73e-12 ***
-crim         -0.108413   0.032779  -3.307 0.001010 ** 
-zn            0.045845   0.013523   3.390 0.000754 ***
-chas          2.718716   0.854240   3.183 0.001551 ** 
-nox         -17.376023   3.535243  -4.915 1.21e-06 ***
-rm            3.801579   0.406316   9.356  &lt; 2e-16 ***
-dis          -1.492711   0.185731  -8.037 6.84e-15 ***
-rad           0.299608   0.063402   4.726 3.00e-06 ***
-tax          -0.011778   0.003372  -3.493 0.000521 ***
-ptratio      -0.946525   0.129066  -7.334 9.24e-13 ***
-black         0.009291   0.002674   3.475 0.000557 ***
-lstat        -0.522553   0.047424 -11.019  &lt; 2e-16 ***
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  0.54971    0.08245   6.667 2.61e-11 ***
+female      -0.06517    0.11644  -0.560    0.576    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 4.736 on 494 degrees of freedom
-Multiple R-squared:  0.7406,    Adjusted R-squared:  0.7348 
-F-statistic: 128.2 on 11 and 494 DF,  p-value: &lt; 2.2e-16</code></pre>
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1666.5  on 1260  degrees of freedom
+Residual deviance: 1666.2  on 1259  degrees of freedom
+  (429 observations deleted due to missingness)
+AIC: 1670.2
+
+Number of Fisher Scoring iterations: 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the next plot configuration</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit4,<span class="at">pch=</span><span class="dv">20</span>, <span class="at">cex=</span>.<span class="dv">8</span>, <span class="at">col=</span><span class="st">"steelblue"</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="st">"fit4"</span>, <span class="at">side =</span> <span class="dv">3</span>, <span class="at">line =</span> <span class="sc">-</span> <span class="dv">2</span>, <span class="at">cex =</span> <span class="dv">2</span>, <span class="at">outer =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(glm.vt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -444,9 +368,6 @@ F-statistic: 128.2 on 11 and 494 DF,  p-value: &lt; 2.2e-16</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Uses coefplot to plot coefficients.  Note the line at 0.</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>arm<span class="sc">::</span><span class="fu">coefplot</span>(fit4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -454,61 +375,6 @@ F-statistic: 128.2 on 11 and 494 DF,  p-value: &lt; 2.2e-16</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Nonlinear terms and Interactions</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>fit5<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>lstat<span class="sc">*</span>age,Boston) <span class="co"># include both variables and the interaction term x1:x2</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = medv ~ lstat * age, data = Boston)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--15.806  -4.045  -1.333   2.085  27.552 
-
-Coefficients:
-              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 36.0885359  1.4698355  24.553  &lt; 2e-16 ***
-lstat       -1.3921168  0.1674555  -8.313 8.78e-16 ***
-age         -0.0007209  0.0198792  -0.036   0.9711    
-lstat:age    0.0041560  0.0018518   2.244   0.0252 *  
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 6.149 on 502 degrees of freedom
-Multiple R-squared:  0.5557,    Adjusted R-squared:  0.5531 
-F-statistic: 209.3 on 3 and 502 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## I() identity function for squared term to interpret as-is</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Combine two command lines with semicolon</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>fit6<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span>lstat <span class="sc">+</span><span class="fu">I</span>(lstat<span class="sc">^</span><span class="dv">2</span>),Boston); <span class="fu">summary</span>(fit6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = medv ~ lstat + I(lstat^2), data = Boston)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--15.2834  -3.8313  -0.5295   2.3095  25.4148 
-
-Coefficients:
-             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 42.862007   0.872084   49.15   &lt;2e-16 ***
-lstat       -2.332821   0.123803  -18.84   &lt;2e-16 ***
-I(lstat^2)   0.043547   0.003745   11.63   &lt;2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 5.524 on 503 degrees of freedom
-Multiple R-squared:  0.6407,    Adjusted R-squared:  0.6393 
-F-statistic: 448.5 on 2 and 503 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(medv<span class="sc">~</span>lstat, <span class="at">pch=</span><span class="dv">20</span>, <span class="at">col=</span><span class="st">"forestgreen"</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(lstat,<span class="fu">fitted</span>(fit6),<span class="at">col=</span><span class="st">"firebrick"</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>fit7<span class="ot">=</span><span class="fu">lm</span>(medv<span class="sc">~</span><span class="fu">poly</span>(lstat,<span class="dv">4</span>))</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(lstat,<span class="fu">fitted</span>(fit7),<span class="at">col=</span><span class="st">"steelblue"</span>,<span class="at">pch=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -516,90 +382,7 @@ F-statistic: 448.5 on 2 and 503 DF,  p-value: &lt; 2.2e-16</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="do">###Qualitative predictors</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Carseats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "Sales"       "CompPrice"   "Income"      "Advertising" "Population" 
- [6] "Price"       "ShelveLoc"   "Age"         "Education"   "Urban"      
-[11] "US"         </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Carseats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     Sales          CompPrice       Income        Advertising    
- Min.   : 0.000   Min.   : 77   Min.   : 21.00   Min.   : 0.000  
- 1st Qu.: 5.390   1st Qu.:115   1st Qu.: 42.75   1st Qu.: 0.000  
- Median : 7.490   Median :125   Median : 69.00   Median : 5.000  
- Mean   : 7.496   Mean   :125   Mean   : 68.66   Mean   : 6.635  
- 3rd Qu.: 9.320   3rd Qu.:135   3rd Qu.: 91.00   3rd Qu.:12.000  
- Max.   :16.270   Max.   :175   Max.   :120.00   Max.   :29.000  
-   Population        Price        ShelveLoc        Age          Education   
- Min.   : 10.0   Min.   : 24.0   Bad   : 96   Min.   :25.00   Min.   :10.0  
- 1st Qu.:139.0   1st Qu.:100.0   Good  : 85   1st Qu.:39.75   1st Qu.:12.0  
- Median :272.0   Median :117.0   Medium:219   Median :54.50   Median :14.0  
- Mean   :264.8   Mean   :115.8                Mean   :53.32   Mean   :13.9  
- 3rd Qu.:398.5   3rd Qu.:131.0                3rd Qu.:66.00   3rd Qu.:16.0  
- Max.   :509.0   Max.   :191.0                Max.   :80.00   Max.   :18.0  
- Urban       US     
- No :118   No :142  
- Yes:282   Yes:258  
-                    
-                    
-                    
-                    </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fit1<span class="ot">=</span><span class="fu">lm</span>(Sales<span class="sc">~</span>.<span class="sc">+</span>Income<span class="sc">:</span>Advertising<span class="sc">+</span>Age<span class="sc">:</span>Price,Carseats) <span class="co"># add two interaction terms</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = Sales ~ . + Income:Advertising + Age:Price, data = Carseats)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--2.9208 -0.7503  0.0177  0.6754  3.3413 
-
-Coefficients:
-                     Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)         6.5755654  1.0087470   6.519 2.22e-10 ***
-CompPrice           0.0929371  0.0041183  22.567  &lt; 2e-16 ***
-Income              0.0108940  0.0026044   4.183 3.57e-05 ***
-Advertising         0.0702462  0.0226091   3.107 0.002030 ** 
-Population          0.0001592  0.0003679   0.433 0.665330    
-Price              -0.1008064  0.0074399 -13.549  &lt; 2e-16 ***
-ShelveLocGood       4.8486762  0.1528378  31.724  &lt; 2e-16 ***
-ShelveLocMedium     1.9532620  0.1257682  15.531  &lt; 2e-16 ***
-Age                -0.0579466  0.0159506  -3.633 0.000318 ***
-Education          -0.0208525  0.0196131  -1.063 0.288361    
-UrbanYes            0.1401597  0.1124019   1.247 0.213171    
-USYes              -0.1575571  0.1489234  -1.058 0.290729    
-Income:Advertising  0.0007510  0.0002784   2.698 0.007290 ** 
-Price:Age           0.0001068  0.0001333   0.801 0.423812    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 1.011 on 386 degrees of freedom
-Multiple R-squared:  0.8761,    Adjusted R-squared:  0.8719 
-F-statistic:   210 on 13 and 386 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Carseats)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(Carseats<span class="sc">$</span>ShelveLoc) <span class="co"># what is contrasts function?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       Good Medium
-Bad       0      0
-Good      1      0
-Medium    0      1</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>?contrasts</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="do">### Writing an R function to combine the lm, plot and abline functions to </span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="do">### create a one step regression fit plot function</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>regplot<span class="ot">=</span><span class="cf">function</span>(x,y){</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  fit<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x,y, <span class="at">pch=</span><span class="dv">20</span>)</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(fit,<span class="at">col=</span><span class="st">"firebrick"</span>)</span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Carseats)</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="fu">regplot</span>(Price,Sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -607,13 +390,9 @@ Medium    0      1</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Allow extra room for additional arguments/specifications</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>regplot<span class="ot">=</span><span class="cf">function</span>(x,y,...){</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  fit<span class="ot">=</span><span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x,y,...)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(fit,<span class="at">col=</span><span class="st">"firebrick"</span>)</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">regplot</span>(Price,Sales,<span class="at">xlab=</span><span class="st">"Price"</span>,<span class="at">ylab=</span><span class="st">"Sales"</span>,<span class="at">col=</span><span class="st">"steelblue"</span>,<span class="at">pch=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TEDS_2016, <span class="fu">aes</span>(<span class="at">x =</span> female, <span class="at">y =</span> votetsai)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#1b98e0"</span>) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Females Voting for Tsai"</span>, <span class="at">x =</span> <span class="st">"Sex"</span>, <span class="at">y =</span> <span class="st">"Votes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -621,21 +400,134 @@ Medium    0      1</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Additional note: try out the coefplot2 package to finetune the coefplots</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="do">##install.packages("coefplot2", repos="http://www.math.mcmaster.ca/bolker/R", type="source")</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="do">## library(coefplot2)</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise </span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Try other combination of interactive terms</span></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># How to interpret interactive terms?</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Read: Brambor, T., Clark, W.R. and Golder, M., 2006. Understanding interaction models: Improving empirical analyses. Political analysis, 14(1), pp.63-82.</span></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># What are qualitative variables?  What class should they be? </span></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>TEDS_2016 <span class="ot">&lt;-</span> <span class="fu">read_stata</span>(<span class="st">"https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true"</span>)</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>glm.vt <span class="ot">&lt;-</span> <span class="fu">glm</span>(votetsai<span class="sc">~</span>female, <span class="at">data =</span> TEDS_2016, <span class="at">family =</span> binomial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>glm.vt <span class="ot">&lt;-</span> <span class="fu">glm</span>(votetsai<span class="sc">~</span>female <span class="sc">+</span> KMT <span class="sc">+</span> DPP <span class="sc">+</span> age <span class="sc">+</span> edu <span class="sc">+</span> income, <span class="at">data =</span> TEDS_2016, <span class="at">family =</span> binomial)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm.vt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = votetsai ~ female + KMT + DPP + age + edu + income, 
+    family = binomial, data = TEDS_2016)
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  1.618640   0.592084   2.734  0.00626 ** 
+female       0.047406   0.177403   0.267  0.78930    
+KMT         -3.156273   0.250360 -12.607  &lt; 2e-16 ***
+DPP          2.888943   0.267968  10.781  &lt; 2e-16 ***
+age         -0.011808   0.007164  -1.648  0.09931 .  
+edu         -0.184604   0.083102  -2.221  0.02632 *  
+income       0.013727   0.034382   0.399  0.68971    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1661.76  on 1256  degrees of freedom
+Residual deviance:  836.15  on 1250  degrees of freedom
+  (433 observations deleted due to missingness)
+AIC: 850.15
+
+Number of Fisher Scoring iterations: 6</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(glm.vt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-8.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-9.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-10.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-11.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>glm.vt <span class="ot">&lt;-</span> <span class="fu">glm</span>(votetsai<span class="sc">~</span>female <span class="sc">+</span> KMT <span class="sc">+</span> DPP <span class="sc">+</span> age <span class="sc">+</span> edu <span class="sc">+</span> income <span class="sc">+</span> Independence <span class="sc">+</span> Econ_worse <span class="sc">+</span> Govt_dont_care <span class="sc">+</span> Minnan_father <span class="sc">+</span> Mainland_father <span class="sc">+</span> Taiwanese, <span class="at">data =</span> TEDS_2016, <span class="at">family =</span> binomial)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm.vt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = votetsai ~ female + KMT + DPP + age + edu + income + 
+    Independence + Econ_worse + Govt_dont_care + Minnan_father + 
+    Mainland_father + Taiwanese, family = binomial, data = TEDS_2016)
+
+Coefficients:
+                 Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)     -0.015976   0.679780  -0.024  0.98125    
+female          -0.097996   0.189840  -0.516  0.60571    
+KMT             -2.922246   0.259333 -11.268  &lt; 2e-16 ***
+DPP              2.468855   0.275350   8.966  &lt; 2e-16 ***
+age              0.003287   0.007884   0.417  0.67672    
+edu             -0.092110   0.090119  -1.022  0.30674    
+income           0.021771   0.036406   0.598  0.54984    
+Independence     1.020953   0.251776   4.055 5.01e-05 ***
+Econ_worse       0.310462   0.189100   1.642  0.10063    
+Govt_dont_care  -0.014295   0.188765  -0.076  0.93964    
+Minnan_father   -0.247650   0.253921  -0.975  0.32941    
+Mainland_father -1.089332   0.396822  -2.745  0.00605 ** 
+Taiwanese        0.909019   0.198930   4.570 4.89e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1661.76  on 1256  degrees of freedom
+Residual deviance:  767.13  on 1244  degrees of freedom
+  (433 observations deleted due to missingness)
+AIC: 793.13
+
+Number of Fisher Scoring iterations: 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(glm.vt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-12.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-13.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-14.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="assignment6_files/figure-html/unnamed-chunk-1-15.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Female voters are slightly less likely to vote for President Tsai, though whether or not a voter is female is a statistically insignificant predictor.</p>
+<p>The best predictors for whether or not someone will vote for President Tsai include KMT, DPP, Independence, Mainland_father, and Taiwanese.</p>
 
 
 

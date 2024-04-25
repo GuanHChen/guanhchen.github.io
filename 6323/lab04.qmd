@@ -293,6 +293,14 @@ fviz_dend(arrest.hc, k = 4, # Four groups
 
 ```
 
+Principal Component Analysis (PCA) and clustering methods serve distinct purposes in data analysis. PCA focuses on dimensionality reduction, aiming to simplify complex datasets by transforming the original variables into a new set of orthogonal variables called principal components. In contrast, clustering methods aim to uncover natural groupings within the data by partitioning it into clusters of similar data points based on similarity or distance metrics. While PCA seeks to condense the information within the data, clustering methods facilitate the discovery of inherent structures or patterns by grouping data points with shared characteristics.
+
+
+
+
+
+
+
 **References**
 
 James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2013 *An introduction to statistical learning*. Vol. 112. New York: Springer.

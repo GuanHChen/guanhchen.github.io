@@ -56,4 +56,19 @@ mean(glm.pred==Direction.2005)
 
 ```
 
-1: What are the requirements of LDA? Predictor variables are normally distributed. Each predictor variable has the same variance.
+2a: Predictor variables are normally distributed, each predictor variable has the same variance, and the response variable must be categorical as LDA is used for classification problems.
+
+2b: LDA is used for multiclass classification whereas logistic regression is for binary classification. LDA also makes assumptions about the distribution of the data whereas logistic regression does not.
+
+2c: The receiving operator characteristic (ROC) evaluates the performance of a classifier model.
+
+2d: Sensitivity is the true positive rate. Specificity is the true negative rate. Generally, sensitivity is more important since there tends to be immediate and severe consequences for false positives (i.e. an innocent person who's found guilty will go to jail) rather than false negatives. Neither type I or II errors are desirable, but high sensitivity should be prioritized. 
+
+2e: Sensitivity is more important for prediction based on the chart.
+
+3: 
+```{R}
+prediction_error <- (252+23)/10000
+cat("Prediction error:", formatC(prediction_error * 100, format = "f", digits = 2), "%\n")
+```
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Guan Chen">
-<meta name="dcterms.date" content="2024-04-23">
+<meta name="dcterms.date" content="2024-04-24">
 
 <title>Guan Chen - Knowledge Mining (EPPS 6323)</title>
 <style>
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 23, 2024</p>
+        <p class="date">April 24, 2024</p>
       </div>
     </div>
     
@@ -380,7 +380,19 @@ glm.pred Down  Up
 </div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Can you interpret the results?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>1: What are the requirements of LDA? Predictor variables are normally distributed. Each predictor variable has the same variance.</p>
+<p>2a: Predictor variables are normally distributed, each predictor variable has the same variance, and the response variable must be categorical as LDA is used for classification problems.</p>
+<p>2b: LDA is used for multiclass classification whereas logistic regression is for binary classification. LDA also makes assumptions about the distribution of the data whereas logistic regression does not.</p>
+<p>2c: The receiving operator characteristic (ROC) evaluates the performance of a classifier model.</p>
+<p>2d: Sensitivity is the true positive rate. Specificity is the true negative rate. Generally, sensitivity is more important since there tends to be immediate and severe consequences for false positives (i.e.&nbsp;an innocent person who’s found guilty will go to jail) rather than false negatives. Neither type I or II errors are desirable, but high sensitivity should be prioritized.</p>
+<p>2e: Sensitivity is more important for prediction based on the chart.</p>
+<p>3:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>prediction_error <span class="ot">&lt;-</span> (<span class="dv">252</span><span class="sc">+</span><span class="dv">23</span>)<span class="sc">/</span><span class="dv">10000</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Prediction error:"</span>, <span class="fu">formatC</span>(prediction_error <span class="sc">*</span> <span class="dv">100</span>, <span class="at">format =</span> <span class="st">"f"</span>, <span class="at">digits =</span> <span class="dv">2</span>), <span class="st">"%</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Prediction error: 2.75 %</code></pre>
+</div>
+</div>
 
 
 
