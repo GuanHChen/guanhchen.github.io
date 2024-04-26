@@ -1,0 +1,58 @@
+---
+title: "Information Management (EPPS 6354)"
+subtitle: "Assignment 3"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+#### 1.  Open the Online SQL interpreter (https://www.db-book.com/db7/university-lab- dir/sqljs.html)
+#### 2.  Write SQL codes to get a list of:
+
+```{=html}
+<!-- -->
+```
+
+####    i.  Students IDs (hint: from the takes relation)
+
+SELECT DISTINCT ID
+FROM takes
+
+####    ii. Instructors
+
+SELECT name
+FROM instructor
+
+####    iii. Departments
+
+SELECT dept_name
+FROM department
+
+```{=html}
+<!-- -->
+```
+#### 3.  Write in SQL codes to do following queries:
+
+```{=html}
+<!-- -->
+```
+#### i.  Find the ID and name of each student who has taken at least one Comp. Sci. course; make sure there are no duplicate names in the result.
+
+
+
+#### ii. Add grades to the list
+#### iii. Find the ID and name of each student who has not taken any course offered before 2017.
+#### iv. For each department, find the maximum salary of instructors in that department. You may assume that every department has at least one instructor.
+#### v.  Find the lowest, across all departments, of the per-department maximum salary computed by the preceding query.
+#### vi. Add names to the list
+
+```{=html}
+<!-- -->
+```
+#### 4.  Find instructor (with name and ID) who has never given an A grade in any course she or he has taught. (Instructors who have never taught a course trivially satisfy this condition.)
+#### 5.  Write SQL query to find the number of students in each section. The result columns should appear in the order “courseid, secid, year, semester, num”. You do not need to output sections with 0 students.
+
+#### 
+
+#### 

@@ -7,8 +7,20 @@ toc: false
 title-block-banner: true
 ---
 
-1. What are the differences between relation schema, relation and instance? Give an example using the university database to illustrate.
-2. Draw a schema diagram for the following bank database:
-3. Consider the above bank database. Assume that branch names (branch_name)and customer names (customer_name)uniquely identify branches and customers, but loans and accounts can be associated with more than one customer.
-i. What are the appropriate primary keys? (Underline each in diagram)
-ii. Given your choice of primary keys, identify appropriate foreign keys.
+#### 1. What are the differences between relation schema, relation and instance? Give an example using the university database to illustrate.
+
+Relation schema is the overall design of the database. Relation refers to a single table in a relational database. Instance is a snapshot of the database in a moment of time.
+
+Using the university database to illustrate, the overall database is the relation schema, the instructor table is a relation, and an instance of the database may be Fall 2019. 
+
+#### 2. Draw a schema diagram for the following bank database:
+
+![Bank Database](IM Assignment 5.jpg)
+
+#### 3. Consider the above bank database. Assume that branch names (branch_name) and customer names (customer_name) uniquely identify branches and customers, but loans and accounts can be associated with more than one customer.
+
+####     i. What are the appropriate primary keys? (Underline each in diagram) 
+
+####     ii. Given your choice of primary keys, identify appropriate foreign keys.
+
+
