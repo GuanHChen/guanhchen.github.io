@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Guan Chen">
-<meta name="dcterms.date" content="2024-04-26">
+<meta name="dcterms.date" content="2024-04-29">
 
 <title>Guan Chen - Information Management (EPPS 6354)</title>
 <style>
@@ -201,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 26, 2024</p>
+        <p class="date">April 29, 2024</p>
       </div>
     </div>
     
@@ -246,25 +246,58 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="i.-find-the-id-and-name-of-each-student-who-has-taken-at-least-one-comp.-sci.-course-make-sure-there-are-no-duplicate-names-in-the-result." class="level4">
 <h4 class="anchored" data-anchor-id="i.-find-the-id-and-name-of-each-student-who-has-taken-at-least-one-comp.-sci.-course-make-sure-there-are-no-duplicate-names-in-the-result.">i. Find the ID and name of each student who has taken at least one Comp. Sci. course; make sure there are no duplicate names in the result.</h4>
+<p>SELECT DISTINCT s.ID, s.name.</p>
+<p>FROM student s.</p>
+<p>JOIN takes t ON s.ID = t.ID.</p>
+<p>JOIN course c ON t.course_id = c.course_id.</p>
+<p>WHERE c.dept_name = ‘Comp. Sci.’</p>
 </section>
 <section id="ii.-add-grades-to-the-list" class="level4">
 <h4 class="anchored" data-anchor-id="ii.-add-grades-to-the-list">ii. Add grades to the list</h4>
+<p>SELECT DISTINCT s.ID, s.name, t.grade</p>
+<p>FROM student s</p>
+<p>JOIN takes t ON s.ID = t.ID</p>
+<p>JOIN course c ON t.course_id = c.course_id</p>
+<p>WHERE c.dept_name = ‘Comp. Sci.’;</p>
 </section>
 <section id="iii.-find-the-id-and-name-of-each-student-who-has-not-taken-any-course-offered-before-2017." class="level4">
 <h4 class="anchored" data-anchor-id="iii.-find-the-id-and-name-of-each-student-who-has-not-taken-any-course-offered-before-2017.">iii. Find the ID and name of each student who has not taken any course offered before 2017.</h4>
+<p>Select DISTINCT s.ID, s.name</p>
+<p>FROM student s</p>
+<p>JOIN takes t ON s.ID = t.ID</p>
+<p>WHERE year &lt; 2017</p>
 </section>
 <section id="iv.-for-each-department-find-the-maximum-salary-of-instructors-in-that-department.-you-may-assume-that-every-department-has-at-least-one-instructor." class="level4">
 <h4 class="anchored" data-anchor-id="iv.-for-each-department-find-the-maximum-salary-of-instructors-in-that-department.-you-may-assume-that-every-department-has-at-least-one-instructor.">iv. For each department, find the maximum salary of instructors in that department. You may assume that every department has at least one instructor.</h4>
+<p>SELECT dept_name, MAX(salary)</p>
+<p>FROM instructor</p>
+<p>GROUP BY dept_name;</p>
 </section>
 <section id="v.-find-the-lowest-across-all-departments-of-the-per-department-maximum-salary-computed-by-the-preceding-query." class="level4">
 <h4 class="anchored" data-anchor-id="v.-find-the-lowest-across-all-departments-of-the-per-department-maximum-salary-computed-by-the-preceding-query.">v. Find the lowest, across all departments, of the per-department maximum salary computed by the preceding query.</h4>
+<p>SELECT MIN(max_salary) AS min_of_max_salaries</p>
+<p>FROM (</p>
+<pre><code>SELECT MAX(salary) AS max_salary
+
+FROM instructor
+
+GROUP BY dept_name</code></pre>
+<p>) AS max_salaries;</p>
 </section>
 <section id="vi.-add-names-to-the-list" class="level4">
 <h4 class="anchored" data-anchor-id="vi.-add-names-to-the-list">vi. Add names to the list</h4>
-<!-- -->
+<p>SELECT name, MIN(max_salary) AS min_of_max_salaries</p>
+<p>FROM (</p>
+<pre><code>SELECT name, MAX(salary) AS max_salary
+
+FROM instructor
+
+GROUP BY dept_name</code></pre>
+<p>) AS max_salaries;</p>
 </section>
 <section id="find-instructor-with-name-and-id-who-has-never-given-an-a-grade-in-any-course-she-or-he-has-taught.-instructors-who-have-never-taught-a-course-trivially-satisfy-this-condition." class="level4">
 <h4 class="anchored" data-anchor-id="find-instructor-with-name-and-id-who-has-never-given-an-a-grade-in-any-course-she-or-he-has-taught.-instructors-who-have-never-taught-a-course-trivially-satisfy-this-condition.">4. Find instructor (with name and ID) who has never given an A grade in any course she or he has taught. (Instructors who have never taught a course trivially satisfy this condition.)</h4>
+<p>Instructor (IID)</p>
 </section>
 <section id="write-sql-query-to-find-the-number-of-students-in-each-section.-the-result-columns-should-appear-in-the-order-courseid-secid-year-semester-num.-you-do-not-need-to-output-sections-with-0-students." class="level4">
 <h4 class="anchored" data-anchor-id="write-sql-query-to-find-the-number-of-students-in-each-section.-the-result-columns-should-appear-in-the-order-courseid-secid-year-semester-num.-you-do-not-need-to-output-sections-with-0-students.">5. Write SQL query to find the number of students in each section. The result columns should appear in the order “courseid, secid, year, semester, num”. You do not need to output sections with 0 students.</h4>
