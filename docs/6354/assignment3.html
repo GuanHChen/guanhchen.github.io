@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Guan Chen">
-<meta name="dcterms.date" content="2024-04-29">
+<meta name="dcterms.date" content="2024-05-06">
 
 <title>Guan Chen - Information Management (EPPS 6354)</title>
 <style>
@@ -170,6 +170,18 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../6354/assignment3.html">
  <span class="dropdown-text">Assignment 3</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../6354/assignment4.html">
+ <span class="dropdown-text">Assignment 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6354/assignment5.html">
+ <span class="dropdown-text">Assignment 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../6354/assignment6.html">
+ <span class="dropdown-text">Assignment 6</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -201,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 29, 2024</p>
+        <p class="date">May 6, 2024</p>
       </div>
     </div>
     
@@ -297,16 +309,11 @@ GROUP BY dept_name</code></pre>
 </section>
 <section id="find-instructor-with-name-and-id-who-has-never-given-an-a-grade-in-any-course-she-or-he-has-taught.-instructors-who-have-never-taught-a-course-trivially-satisfy-this-condition." class="level4">
 <h4 class="anchored" data-anchor-id="find-instructor-with-name-and-id-who-has-never-given-an-a-grade-in-any-course-she-or-he-has-taught.-instructors-who-have-never-taught-a-course-trivially-satisfy-this-condition.">4. Find instructor (with name and ID) who has never given an A grade in any course she or he has taught. (Instructors who have never taught a course trivially satisfy this condition.)</h4>
-<p>Instructor (IID)</p>
+<p>SELECT DISTINCT i.ID, i.name FROM instructor i LEFT JOIN teaches t ON i.ID = t.ID LEFT JOIN takes ta ON ta.course_id = t.course_id WHERE i.ID NOT IN ( SELECT DISTINCT t.ID FROM teaches t JOIN takes ta ON t.course_id = ta.course_id WHERE ta.grade = ‘A’ );</p>
 </section>
 <section id="write-sql-query-to-find-the-number-of-students-in-each-section.-the-result-columns-should-appear-in-the-order-courseid-secid-year-semester-num.-you-do-not-need-to-output-sections-with-0-students." class="level4">
 <h4 class="anchored" data-anchor-id="write-sql-query-to-find-the-number-of-students-in-each-section.-the-result-columns-should-appear-in-the-order-courseid-secid-year-semester-num.-you-do-not-need-to-output-sections-with-0-students.">5. Write SQL query to find the number of students in each section. The result columns should appear in the order “courseid, secid, year, semester, num”. You do not need to output sections with 0 students.</h4>
-</section>
-<section id="section" class="level4">
-<h4 class="anchored" data-anchor-id="section"></h4>
-</section>
-<section id="section-1" class="level4">
-<h4 class="anchored" data-anchor-id="section-1"></h4>
+<p>SELECT t.course_id, t.sec_id, t.year, t.semester, COUNT(t.ID) AS num FROM takes t JOIN section s ON t.course_id = s.course_id AND t.sec_id = s.sec_id GROUP BY t.course_id, t.sec_id, t.year, t.semester;</p>
 
 
 </section>

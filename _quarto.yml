@@ -49,6 +49,12 @@ website:
             text: Assignment 2
           - href: 6354/assignment3.qmd
             text: Assignment 3
+          - href: 6354/assignment4.qmd
+            text: Assignment 4
+          - href: 6354/assignment5.qmd
+            text: Assignment 5
+          - href: 6354/assignment6.qmd
+            text: Assignment 6
 format:
   html:
     theme: cyborg

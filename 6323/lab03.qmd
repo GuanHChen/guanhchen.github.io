@@ -122,8 +122,4 @@ regplot(TEDS_2016$income, TEDS_2016$Tondu)
 
 The regression plot does not appear to be very meaningful. This is due to the Tondu variable having 7 categories.
 
-Since the data is discrete, linear regression is not the most appropriate modeling method. I would opt to use logistic regression instead. 
-
-
-
-
+Since the data is discrete, linear regression is not the most appropriate modeling method. I would opt to use logistic regression instead.
