@@ -55,6 +55,10 @@ website:
             text: Assignment 5
           - href: 6354/assignment6.qmd
             text: Assignment 6
+      - text: Data Collection & Production
+        menu: 
+          - href: 6302/proposal.pdf
+            text: Project Proposal
 format:
   html:
     theme: cyborg
