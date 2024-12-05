@@ -13,6 +13,10 @@ website:
       - href: other/Guan Chen Resume 24S.pdf
         text: CV
         target: "_blank"
+      - text: Previous Work
+        menu:
+          - href: https://guanhchen.github.io/knowledgemining
+            text: Knowledge Mining
       # - text: Knowledge Mining
       #   menu: 
       #     - href: 6323/proposal.qmd
