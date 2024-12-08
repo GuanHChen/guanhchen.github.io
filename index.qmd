@@ -11,17 +11,19 @@ toc: false
 
 -->
 ```
+
 ```{=html}
 
 <!-- Why can't this be in pandoc notation? Because quarto does extra backend processes that ruins the column structure below by applying "page-full" to all columns :( idk why this happens so I'm just hard coding it with html-->
 
 <div class="column-page">
 ```
+
 ## About Me
 
 <!-- <i class="bi bi-rocket-takeoff-fill"></i> -->
 
-::: grid
+::::: grid
 ::: g-col-4
 ![](images/Wordpicturephoto.png){width="100%"}
 :::
@@ -35,7 +37,7 @@ Hello! I am currently a master's student in the Social Data Analytics and Resear
 
 Please feel free to look around my website and learn more about me! <!-- ::: --> <!-- ::: -->
 :::
-:::
+:::::
 
 ### Get In Touch
 
