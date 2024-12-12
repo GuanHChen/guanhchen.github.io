@@ -41,12 +41,35 @@ Please feel free to look around my website and learn more about me! <!-- ::: -->
 
 ### Get In Touch
 
-<!-- [guan.chen\@utdallas.edu](mailto:guan.chen@utdallas.edu) -->
-
 ::: {style="display: flex; gap: 23px;"}
-<a href="mailto:guan.chen@utdallas.edu"> <i class="bi bi-envelope-paper-fill" style="font-size: 30px;"></i> </a>
+<script>
+    function copyToClipboard() {
+        const email = 'guan.chen@utdallas.edu';
+        navigator.clipboard.writeText(email).then(() => {
+            const notification = document.createElement('div');
+            notification.textContent = 'Email copied to clipboard';
+            notification.style.position = 'fixed';
+            notification.style.top = '100px';
+            notification.style.left = '50%';
+            notification.style.transform = 'translateX(-50%)';
+            notification.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            notification.style.color = 'white';
+            notification.style.padding = '10px 20px';
+            notification.style.borderRadius = '5px';
+            notification.style.fontSize = '14px';
+            notification.style.zIndex = '1000';
+            document.body.appendChild(notification);
 
-<a href="https://www.yout-ube.com/watch?v=dQw4w9WgXcQ" target="_blank"> <i class="bi bi-telephone-fill" style="font-size: 30px;"></i> </a>
+            setTimeout(() => {
+                notification.remove();
+            }, 3000); // Notification disappears after 3 seconds
+        });
+    }
+</script>
+
+<a href="#" onclick="copyToClipboard()"> <i class="bi bi-envelope-paper-fill" style="font-size: 30px;"></i> </a>
+
+<a href="https://github.com/GuanHChen"> <i class="bi bi-github" style="font-size: 30px;"></i> </a>
 
 <a href="https://www.linkedin.com/in/guan-chen-983371198/" target="_blank"> <i class="bi bi-linkedin" style="font-size: 30px;"></i> </a>
 :::
