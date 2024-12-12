@@ -3,16 +3,6 @@ toc: false
 ---
 
 ```{=html}
-<!--
-
-<div style="float: left; margin: 1px;">
-  <img src="images/Guan Circular Photo.png" alt="Description of the image" width="300" height="300">
-</div>
-
--->
-```
-
-```{=html}
 
 <!-- Why can't this be in pandoc notation? Because quarto does extra backend processes that ruins the column structure below by applying "page-full" to all columns :( idk why this happens so I'm just hard coding it with html-->
 
@@ -20,8 +10,6 @@ toc: false
 ```
 
 ## About Me
-
-<!-- <i class="bi bi-rocket-takeoff-fill"></i> -->
 
 ::::: grid
 ::: g-col-4
