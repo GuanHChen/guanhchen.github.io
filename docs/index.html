@@ -156,26 +156,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-
-<!-- Why can't this be in pandoc notation? Because quarto does extra backend processes that ruins the column structure below by applying "page-full" to all columns :( idk why this happens so I'm just hard coding it with html-->
-
-<div class="column-page">
-<section id="about-me" class="level2">
+<section id="about-me" class="level2 column-page">
 <h2 class="anchored" data-anchor-id="about-me">About Me</h2>
 <div class="grid">
 <div class="g-col-4">
 <p><img src="images/Wordpicturephoto.png" class="img-fluid" style="width:100.0%"></p>
+<div style="text-align: center;">
+<div style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">
+<p>Get In Touch</p>
 </div>
-<div class="g-col-8">
-<!-- ::: card -->
-<!-- ::: card-body -->
-<p>Hello! I am currently a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background as a scientist in bacterial genetics and membrane biology. My goal is to enhance my analytical abilities and pursue a career in data science.</p>
-<p>Please feel free to look around my website and learn more about me! <!-- ::: --> <!-- ::: --></p>
-</div>
-</div>
-<section id="get-in-touch" class="level3">
-<h3 class="anchored" data-anchor-id="get-in-touch">Get In Touch</h3>
-<div style="display: flex; gap: 23px;">
+<div style="display: flex; justify-content: center; gap: 23px;">
 <script>
     function copyToClipboard() {
         const email = 'guan.chen@utdallas.edu';
@@ -204,10 +194,14 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://github.com/GuanHChen"> <i class="bi bi-github" style="font-size: 30px;"></i> </a></p>
 <p><a href="https://www.linkedin.com/in/guan-chen-983371198/" target="_blank"> <i class="bi bi-linkedin" style="font-size: 30px;"></i> </a></p>
 </div>
-
-</section></section></div>
-
-
+</div>
+</div>
+<div class="g-col-8">
+<p>Hello! I am currently a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background as a scientist in bacterial genetics and membrane biology. My goal is to enhance my analytical abilities and pursue a career in data science.</p>
+<p>Please feel free to look around my website and learn more about me!</p>
+</div>
+</div>
+</section>
 
 
 
