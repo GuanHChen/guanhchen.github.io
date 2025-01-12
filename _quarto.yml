@@ -10,7 +10,7 @@ website:
     right:
       - href: qtfiles/personalstatement.qmd
         text: Personal Statement
-      - href: other/Guan Chen Resume 24S.pdf
+      - href: other/Guan Chen.docx
         text: CV
         target: "_blank"
       - text: Previous Work
