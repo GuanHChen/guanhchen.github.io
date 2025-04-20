@@ -8,8 +8,8 @@ website:
   title: "Guan Chen"
   navbar:
     right:
-      - href: qtfiles/personalstatement.qmd
-        text: Personal Statement
+      - href: other/econ_pres.pptx
+        text: Credit Default Presentation
       - href: other/Guan Chen.docx
         text: CV
         target: "_blank"
