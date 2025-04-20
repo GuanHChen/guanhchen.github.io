@@ -13,66 +13,7 @@ website:
       - href: other/Guan Chen.docx
         text: CV
         target: "_blank"
-      - text: Previous Work
-        menu:
-          - href: https://guanhchen.github.io/knowledgemining
-            text: Knowledge Mining
-      # - text: Knowledge Mining
-      #   menu: 
-      #     - href: 6323/proposal.qmd
-      #       text: Project Proposal
-      #     - href: 6323/assignment1.qmd
-      #       text: Assignment 1
-      #     - href: 6323/assignment2.qmd
-      #       text: Assignment 2
-      #     - href: 6323/lab01.qmd
-      #       text: Assignment 2 - Lab 1
-      #     - href: 6323/lab02.qmd
-      #       text: Assignment 2 - Lab 2
-      #     - href: 6323/lab03.qmd
-      #       text: Assignment 3 - Lab 3 
-      #     - href: 6323/assignment4.qmd
-      #       text: Assignment 4
-      #     - href: 6323/lab04.qmd
-      #       text: Assignment 5
-      #     - href: 6323/assignment6.qmd
-      #       text: Assignment 6
-      #     - href: 6323/assignment7.qmd
-      #       text: Assignment 7
-      #     - href: 6323/assignment8.qmd
-      #       text: Assignment 8
-      #       
-      # - text: Information Management
-      #   menu: 
-      #     - href: 6354/2024-2-29chenproposal.pptx
-      #       text: Project Proposal
-      #       target: "_blank"
-      #     - href: 6354/assignment1.qmd
-      #       text: Assignment 1
-      #     - href: 6354/assignment2.qmd
-      #       text: Assignment 2
-      #     - href: 6354/assignment3.qmd
-      #       text: Assignment 3
-      #     - href: 6354/assignment4.qmd
-      #       text: Assignment 4
-      #     - href: 6354/assignment5.qmd
-      #       text: Assignment 5
-      #     - href: 6354/assignment6.qmd
-      #       text: Assignment 6
-      - text: Data Collection & Production
-        menu: 
-          - href: 6302/proposal.pdf
-            text: Project Proposal
-          - href: 6302/chen_finalslides.pdf
-            text: Final Presentation
-          - href: 6302/assignment2.qmd
-            text: Assignment 2
-          - href: 6302/assignment3.qmd
-            text: Assignment 3
-          - href: 6302/assignment4.qmd
-            text: Assignment 4
-          - href: 6302/assignment5.qmd
-            text: Assignment 5
+ 
 format:
   html:
     theme: cyborg
