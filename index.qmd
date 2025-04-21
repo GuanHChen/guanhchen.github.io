@@ -52,7 +52,7 @@ Get In Touch
 ::::::
 
 ::: g-col-8
-Hello! I am currently a master's student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background as a scientist in bacterial genetics and membrane biology. My goal is to enhance my analytical abilities and pursue a career in data science.
+Hello! I am a master's student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background as a scientist in bacterial genetics and membrane biology. My goal is to tackle complex data problems and pursue a career in data science.
 
 Please feel free to look around my website and learn more about me!
 :::
