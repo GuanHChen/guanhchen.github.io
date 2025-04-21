@@ -8,7 +8,7 @@ website:
   title: "Guan Chen"
   navbar:
     right:
-      - href: other/econ_pres.pptx
+      - href: other/chen_presentation.pptx
         text: Credit Default Presentation
       - href: other/Guan Chen.docx
         text: CV
