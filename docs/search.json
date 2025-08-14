@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "qtfiles/personalstatement.html",
-    "href": "qtfiles/personalstatement.html",
-    "title": "Personal Statement",
+    "objectID": "qtfiles/cv.html",
+    "href": "qtfiles/cv.html",
+    "title": "CV",
     "section": "",
-    "text": "Whispering with excitement to my friend, I exclaimed, “Watch this.”\n\ninstall.packages('dplyr')\n\nMy index finger slammed onto the enter key, as if attempting to drive it through the keyboard. An irresistible grin spread across my face as the glorious stream of text flowed through the console, allowing me to manifest my inner ‘hackerman,’ culminating in the satisfying message:\n\ndownloaded 1.5 MB\n\nTurning to my friend, who had been tutoring me, I observed what I would like to consider stone-faced awe. Truth be told, entering the Social Data Analytics and Research (SDAR) master’s program with a background in biochemistry has proven to be a challenging yet rewarding transition. While I had become comfortable physically generating data and performing statistical analysis in the Palmer lab, handling these tasks virtually and exclusively through code posed a different, yet gratifying challenge.\nIn just three months into the program, I’ve already identified parallels between my data science coursework and my professional experience as a scientist. My presentation skills from participating in the Summer Platform for Undergraduate Research (SPUR) translated seamlessly, highlighting my aptitude for explaining complex work in simple terms and defending project intricacies under scrutiny. Additionally, leading the PFAS team in the Palmer lab has equipped me with invaluable experience in managing social and logistical complexities within a team setting. My skill set has prepared me to excel in my classes and collaborate effectively with my peers.\nDespite being a novice in coding, my rapid progress is evident in the creation of my personal website. I find myself improving the site as I update it with new assignments. This platform showcases my achievements and serves as a testament to my coding proficiency and continuous improvement.\nUltimately, my aim is to cultivate my skills as a data scientist at the University of Texas at Dallas and to leverage my biochemistry background to make meaningful contributions to the medical industry. I hope to utilize the scholarship funds to invest in my education, paving the way for a future where my coding prowess can measurably impact people’s lives. I aspire to be a true ‘hackerman’ and to a future where the power of my enter key can make a tangible and positive difference in the world."
+    "text": "CV"
   },
   {
     "objectID": "index.html",
@@ -21,10 +21,10 @@
     "text": "Get In Touch\n\n\n\n  \n  \n  \n\n\n\n\nHello! I am a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I have a background as a scientist in bacterial genetics and membrane biology. My goal is to tackle complex data problems and pursue a career in data science.\nPlease feel free to look around my website and learn more about me!"
   },
   {
-    "objectID": "qtfiles/cv.html",
-    "href": "qtfiles/cv.html",
-    "title": "CV",
+    "objectID": "qtfiles/personalstatement.html",
+    "href": "qtfiles/personalstatement.html",
+    "title": "Personal Statement",
     "section": "",
-    "text": "CV"
+    "text": "Whispering with excitement to my friend, I exclaimed, “Watch this.”\n\ninstall.packages('dplyr')\n\nMy index finger slammed onto the enter key, as if attempting to drive it through the keyboard. An irresistible grin spread across my face as the glorious stream of text flowed through the console, allowing me to manifest my inner ‘hackerman,’ culminating in the satisfying message:\n\ndownloaded 1.5 MB\n\nTurning to my friend, who had been tutoring me, I observed what I would like to consider stone-faced awe. Truth be told, entering the Social Data Analytics and Research (SDAR) master’s program with a background in biochemistry has proven to be a challenging yet rewarding transition. While I had become comfortable physically generating data and performing statistical analysis in the Palmer lab, handling these tasks virtually and exclusively through code posed a different, yet gratifying challenge.\nIn just three months into the program, I’ve already identified parallels between my data science coursework and my professional experience as a scientist. My presentation skills from participating in the Summer Platform for Undergraduate Research (SPUR) translated seamlessly, highlighting my aptitude for explaining complex work in simple terms and defending project intricacies under scrutiny. Additionally, leading the PFAS team in the Palmer lab has equipped me with invaluable experience in managing social and logistical complexities within a team setting. My skill set has prepared me to excel in my classes and collaborate effectively with my peers.\nDespite being a novice in coding, my rapid progress is evident in the creation of my personal website. I find myself improving the site as I update it with new assignments. This platform showcases my achievements and serves as a testament to my coding proficiency and continuous improvement.\nUltimately, my aim is to cultivate my skills as a data scientist at the University of Texas at Dallas and to leverage my biochemistry background to make meaningful contributions to the medical industry. I hope to utilize the scholarship funds to invest in my education, paving the way for a future where my coding prowess can measurably impact people’s lives. I aspire to be a true ‘hackerman’ and to a future where the power of my enter key can make a tangible and positive difference in the world."
   }
 ]
