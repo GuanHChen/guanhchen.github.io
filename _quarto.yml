@@ -11,8 +11,10 @@ website:
       - href: other/Guan Chen.docx
         text: Resume
         target: "_blank"
-      - href: epps6356/assignment1.qmd
-        text: Assignment 1
+      - text: Data Visualization
+        menu:
+        - href: epps6356/assignment1.qmd
+          text: Assignment 1
  
 format:
   html:
