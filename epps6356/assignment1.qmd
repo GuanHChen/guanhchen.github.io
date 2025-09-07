@@ -1,0 +1,18 @@
+---
+title: "Data Visualization"
+subtitle: "Assignment 1: Review of Inge Druckrey Video"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+### Inge Druckrey: Teaching to See
+
+The video explores a unique artistic paradigm: defining objects by their visual features rather than their function. For instance, a banana is perceived not as food, but as a curve with contours that convey information like the thickness of its peel. This method of breaking down objects into their visual components is a fundamental principle for an artist, enabling them to observe the world as it truly is constructed, not as they have been conditioned to see it.
+
+The documentary further characterizes the roles of the eye and the hand as opposing forces in the history of writing. The eye is portrayed as a conservative force that seeks order and perfection in letterforms. Conversely, the hand is a radical force, driven by a desire for speed and expression. This inherent conflict between the eye's pursuit of a consistent, perfect pattern and the hand's natural haste shapes the evolution of typography and calligraphy.
+
+Drawing on his experience in calligraphy, Steve Jobs insisted that the Mac be the first personal computer to feature multiple typefaces and proportionally spaced fonts. Jobs believed that the aesthetic quality of typography added an intangible benefit to the user experience, an idea that proved revolutionary and was later adopted as an industry standard. This focus on aesthetic detail over simple utility exemplifies the same "artist's eye" that deconstructs a banana into its visual features rather than its function.
+
+Our perception of visual weight in typography often differs from its geometric reality. While a letter may be precisely 20 pixels wide, its visual weight can appear off-balance. For example, a geometrically accurate letter like an "O" might look too thin compared to a "T" if its stroke weight is not optically adjusted. Therefore, good font design requires an artist's eye to balance optical perception, rather than relying solely on geometric accuracy. This subtle manipulation of visual features ensures that the typography looks balanced and harmonious to the human eye, even if the underlying measurements are not uniform.
