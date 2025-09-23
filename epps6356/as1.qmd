@@ -1,0 +1,45 @@
+---
+title: "Data Visualization"
+subtitle: "Assignment 1: Anscombe Dataset, Fall.R, and Chart Critique"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+## Anscombe
+
+```{r}
+#| file: anscombe01.R
+#| echo: true
+#| eval: true
+```
+
+Anscombe's regression datasets share almost identical descriptive statistics, yet appear markedly distinct from each other when visualized on a plot. Anscombe argues that relying strictly on descriptive statistics can be misleading, and that data visualization is a key component of data analysis. However, given sufficient statistical descriptions, it is possible to discriminate between datasets. That being the case, visualizations remain the most effective way of communicating differences in trends and outliers.
+
+\
+\
+\
+
+## Fall.R
+
+```{r}
+#| file: Fall.R
+#| echo: true
+#| eval: true
+```
+
+\
+\
+\
+
+## Chart Review 
+
+In the paper "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence" by Erik Brynjolfsson, Bharat Chandar, and Ruyu Chen, the researchers discuss the effect of artificial intelligence (AI) on employment by field. In the graph below, the count of software developers by age group is shown over time. 
+\
+\
+
+![Line graph showing employment trends of software engineers by age group over time. The data is normalized to 1 in October 2022.](SoftwareDevelopersByAge.png)
+
+\
+This line chart highlights the harrowing trend of employment for entry level software engineers. However, there are a few modifications that can be done to improve the effectiveness of the graph. There are a lot of age groups clustered tightly around each other, but the main trend is that early career software developers are not getting hired. With that in mind, changing the colors for the older age groups to muted pastel colors while keeping the bright colors for the early career age groups can further endorse the story that young software engineers are struggling in the market. To further hone in on this trend, the age groups could be simplified to just early, middle, and senior career to reduce noise and clutter. Additionally, it's not immediately clear what the lines represent until the viewer analyzes the legend on the right. Attaching labels to each line will reduce the distance that viewers' eyes need to travel, facilitating better information communication. Finally, the x-axis appears cluttered with the year-month format. A 2 tier x-axis could be implemented with the lower level showing the year and the upper level showing the month, preserving continuity but making date information more digestible. These changes would turn an already good line graph into visual candy: a clean, compelling, and effortless way for audiences to enjoy a story.

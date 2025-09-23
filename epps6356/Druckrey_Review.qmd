@@ -1,6 +1,6 @@
 ---
 title: "Data Visualization"
-subtitle: "Assignment 1: Review of Inge Druckrey Video"
+subtitle: "Review of Inge Druckrey Video"
 author: "Guan Chen"
 date: last-modified
 toc: false

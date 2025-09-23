@@ -13,7 +13,9 @@ website:
         target: "_blank"
       - text: Data Visualization
         menu:
-        - href: epps6356/assignment1.qmd
+        - href: epps6356/Druckrey_Review.qmd
+          text: Druckrey Video Review
+        - href: epps6356/as1.qmd
           text: Assignment 1
  
 format:
