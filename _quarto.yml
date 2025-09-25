@@ -17,6 +17,8 @@ website:
           text: Druckrey Video Review
         - href: epps6356/as1.qmd
           text: Assignment 1
+        - href: epps6356/data_visualization_review.qmd
+          text: Journalistic vs Academic Data Visualization
  
 format:
   html:
