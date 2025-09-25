@@ -1,18 +1,18 @@
 ---
 title: "Data Visualization"
-subtitle: "Assignment 1: Anscombe Dataset, Fall.R, and Chart Critique"
+subtitle: "Review of Differences between Academic and Journalistic Data Visualization"
 author: "Guan Chen"
 date: last-modified
 toc: false
 title-block-banner: true
 ---
+
 ## Academic vs Journalistic Data Visualization
 
-The primary goal of data visualization is to transform data into something that people can engage with. The transformation of data from tabular format into a visual such as a trend line on a graph can condense a vast amount of information into something instantaneously comprehensible. Although the general goal of data visualization is to make data easier to consume, the priorities can change depending on the audience the data is intended for. 
+The primary goal of data visualization is to transform data into something that people can engage with. The transformation of data from tabular format into a visual such as a trend line on a graph can condense a vast amount of information into something instantaneously comprehensible. Although the general goal of data visualization is to make data easier to consume, the priorities can change depending on the audience the data is intended for.
 
-For journalism, the demographics of the audience is extremely broad and visuals must be accessible and cater to the audience members with the least background knowledge. Journalistic data visualization also tends to be more visually appealing due to the need to attract views; sometimes, this may conflict with presenting data in the most informative way. Additionally, time may be a factor in that journalistic data visuals have a tight deadline to meet. This may lead to strategic compromises given the limited resources that journalists have to work with. 
+For journalism, the demographics of the audience is extremely broad and visuals must be accessible and cater to the audience members with the least background knowledge. Journalistic data visualization also tends to be more visually appealing due to the need to attract views; sometimes, this may conflict with presenting data in the most informative way. Additionally, time may be a factor in that journalistic data visuals have a tight deadline to meet. This may lead to strategic compromises given the limited resources that journalists have to work with.
 
-On the other hand, academic data visualization tends to cater towards peers within the same field. Visuals do not need to be excessively aesthetically attractive since the priority above all is rigor and accuracy. In academia, researchers tend to have many opportunities (drafts, peer reviews, revisions) to refine and iterate over their work, culminating in visuals that are typically robust and informative. 
+On the other hand, academic data visualization tends to cater towards peers within the same field. Visuals do not need to be excessively aesthetically attractive since the priority above all is rigor and accuracy. In academia, researchers tend to have many opportunities (drafts, peer reviews, revisions) to refine and iterate over their work, culminating in visuals that are typically robust and informative.
 
-Overall, journalistic and academic data visualization share some goals and similarities, but priorities diverge due to the resources that professionals are subject to and also the intended audience for the visuals. These differences shape the ultimate design choices, detail, and objective of visuals and the way they're utilized in storytelling. 
-
+Overall, journalistic and academic data visualization share some goals and similarities, but priorities diverge due to the resources that professionals are subject to and also the intended audience for the visuals. These differences shape the ultimate design choices, detail, and objective of visuals and the way they're utilized in storytelling.
