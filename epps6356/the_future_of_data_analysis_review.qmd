@@ -1,0 +1,16 @@
+---
+title: "Data Visualization"
+subtitle: "Review of The Future of Data Analysis"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+### The Future of Data Analysis
+
+In The Future of Data Analysis talk, Edward Tufte discusses the importance of the philosophy of data analysis. Tufte stresses the goal of data analysis is to assist reasoning and to explain phenomena. Tufte proposes the idea that design choices, philosophy, and principles for data visualization should be a reflection of this mission. 
+
+Tufte illustrates the replication crisis in academia, pointing out that many discoveries in the social sciences cannot be replicated. This is in part due to the virulence of stuffing statistics in research papers with no care about the principle but all about the method. It has been a trend to include some sort of statistics to improve the robustness of any research results. Yet, many researchers do not do their due diligence in building a working background in statistics, and even worse is that many employ statistics such as t-tests in circumstances which violate the tests' fundamental assumptions. 
+
+Tufte argues that data analysis should problem-oriented as opposed to method oriented. As a former academic, I have witnessed, first-hand, the mad scramble for employing (often bad) statistics. If data analysis principles are compromised, the outcome of data visualization loses power and meaning. Not only is this ineffective for explaining trends, but poor practices may even hinder and mislead audiences. In an age where there is more data than ever before and a library of statistical methods that exist alongside it, the problem is not that analysis needs to be conducted; the core issue is the right analysis must be used on the right data with an unyielding commitment to truth and ethics. 

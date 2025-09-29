@@ -19,6 +19,10 @@ website:
           text: Assignment 1
         - href: epps6356/data_visualization_review.qmd
           text: Journalistic vs Academic Data Visualization
+        - href: epps6356/the_future_of_data_analysis_review.qmd
+          text: Review of The Future of Data Analysis
+        - href: epps6356/as2.qmd
+          text: Assignment 2
  
 format:
   html:
