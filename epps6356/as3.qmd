@@ -1,0 +1,95 @@
+---
+title: "Data Visualization"
+subtitle: "Assignment 3"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+### Section 1
+
+```{r}
+library(readxl)
+df <- read_excel('myHPI.xlsx') # import data
+df <- na.omit(df) # remove na's
+
+hist_density <- density(df$GDP) # create density line
+hist(df$GDP, # histogram function
+     breaks = 7, # 7 sections
+     freq = FALSE, # use density instead of frequency
+     col = 'azure3', 
+     main = 'Histogram of GDP per Capita',
+     xlab = 'GDP'
+     )
+lines(hist_density, # add density line on top of the histogram
+      col = 'cyan4',
+      lwd = 2)
+```
+
+### Section 2
+
+```{r}
+data(anscombe)  # Load Anscombe's data
+summary(anscombe)
+
+## Simple version
+plot(anscombe$x1,anscombe$y1)
+summary(anscombe)
+
+# Create four model objects
+lm1 <- lm(y1 ~ x1, data=anscombe)
+summary(lm1)
+lm2 <- lm(y2 ~ x2, data=anscombe)
+summary(lm2)
+lm3 <- lm(y3 ~ x3, data=anscombe)
+summary(lm3)
+lm4 <- lm(y4 ~ x4, data=anscombe)
+summary(lm4)
+```
+
+Using summary, it can be observed that the 4 regression lines are extremely similar to each other as they share similar slope and intercept values. 
+
+```{r}
+# Default Plots
+plot(anscombe$x1,anscombe$y1)
+abline(coefficients(lm1))
+plot(anscombe$x2,anscombe$y2)
+abline(coefficients(lm2))
+plot(anscombe$x3,anscombe$y3)
+abline(coefficients(lm3))
+plot(anscombe$x4,anscombe$y4)
+abline(coefficients(lm4))
+
+# New Plots With Dashed Lines and Triangle Plotting Characters
+plot(anscombe$x1, 
+     anscombe$y1,
+     col = "cyan4",
+     pch = 17
+     )
+abline(coefficients(lm1), lty = 2)
+plot(anscombe$x2, 
+     anscombe$y2,
+     col = "cyan4",
+     pch = 17
+     )
+abline(coefficients(lm2), lty = 2)
+plot(anscombe$x3, 
+     anscombe$y3,
+     col = "cyan4",
+     pch = 17
+     )
+abline(coefficients(lm3), lty = 2)
+plot(anscombe$x4, 
+     anscombe$y4,
+     col = "cyan4",
+     pch = 17
+     )
+abline(coefficients(lm4), lty = 2)
+```
+
+
+
+
+
+

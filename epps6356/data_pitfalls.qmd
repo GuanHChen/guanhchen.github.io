@@ -1,0 +1,13 @@
+---
+title: "Data Visualization"
+subtitle: "Discussion: Big Data Analytics Pitfalls; Overfitting and Overparameterization"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+### Big Data Analytics Pitfalls
+
+In an age where data is excessive
+

@@ -1,5 +1,4 @@
 library(readxl)
-library(dplyr)
 df <- read_excel('epps6356/myHPI.xlsx')
 df <- na.omit(df)
 
