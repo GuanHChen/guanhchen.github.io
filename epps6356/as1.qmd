@@ -33,10 +33,9 @@ Anscombe's regression datasets share almost identical descriptive statistics, ye
 \
 \
 
-## Chart Review 
+## Chart Review
 
-In the paper "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence" by Erik Brynjolfsson, Bharat Chandar, and Ruyu Chen, the researchers discuss the effect of artificial intelligence (AI) on employment by field. In the graph below, the count of software developers by age group is shown over time. 
-\
+In the paper "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence" by Erik Brynjolfsson, Bharat Chandar, and Ruyu Chen, the researchers discuss the effect of artificial intelligence (AI) on employment by field. In the graph below, the count of software developers by age group is shown over time.\
 \
 
 ![Line graph showing employment trends of software engineers by age group over time. The data is normalized to 1 in October 2022.](SoftwareDevelopersByAge.png)
