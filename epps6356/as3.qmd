@@ -48,7 +48,7 @@ lm4 <- lm(y4 ~ x4, data=anscombe)
 summary(lm4)
 ```
 
-Using summary, it can be observed that the 4 regression lines are extremely similar to each other as they share similar slope and intercept values. 
+Using summary, it can be observed that the 4 regression lines are extremely similar to each other as they share similar slope and intercept values.
 
 ```{r}
 # Default Plots
@@ -88,8 +88,78 @@ plot(anscombe$x4,
 abline(coefficients(lm4), lty = 2)
 ```
 
+### Section 3
 
+```{r}
+par(family = "serif")
+plot(anscombe$x1, 
+     anscombe$y1,
+     col = "#E39110",
+     pch = "A"
+     )
+abline(coefficients(lm1), lty = 2)
+plot(anscombe$x2, 
+     anscombe$y2,
+     col = "#E39110",
+     pch = "A"
+     )
+abline(coefficients(lm2), lty = 2)
+plot(anscombe$x3, 
+     anscombe$y3,
+     col = "#E39110",
+     pch = "A"
+     )
+abline(coefficients(lm3), lty = 2)
+plot(anscombe$x4, 
+     anscombe$y4,
+     col = "#E39110",
+     pch = "A"
+     )
+abline(coefficients(lm4), lty = 2)
+par(family = "")
+```
 
+### Section 4
 
+```{r}
+library(ggplot2)
+ggplot(anscombe, aes(x = x1, y = y1)) +
+  geom_point(color = "#720F96", shape = 17, size = 2) +
+  geom_smooth(
+    method = "lm",
+    se = FALSE,
+    color = "#2B232E"
+  ) +
+  labs(title = "Anscombe 1", x = "X1", y = "Y1") +
+  theme_minimal()
 
+ggplot(anscombe, aes(x = x2, y = y2)) +
+  geom_point(color = "#720F96", shape = 17, size = 2) +
+  geom_smooth(
+    method = "lm",
+    se = FALSE,
+    color = "#2B232E"
+  ) +
+  labs(title = "Anscombe 2", x = "X2", y = "Y2") +
+  theme_minimal()
 
+ggplot(anscombe, aes(x = x3, y = y3)) +
+  geom_point(color = "#720F96", shape = 17, size = 2) +
+  geom_smooth(
+    method = "lm",
+    se = FALSE,
+    color = "#2B232E"
+  ) +
+  labs(title = "Anscombe 3", x = "X3", y = "Y3") +
+  theme_minimal()
+
+ggplot(anscombe, aes(x = x4, y = y4)) +
+  geom_point(color = "#720F96", shape = 17, size = 2) +
+  geom_smooth(
+    method = "lm",
+    se = FALSE,
+    color = "#2B232E"
+  ) +
+  labs(title = "Anscombe 4", x = "X4", y = "Y4") +
+  theme_minimal()
+```

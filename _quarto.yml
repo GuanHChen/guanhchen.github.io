@@ -23,7 +23,11 @@ website:
           text: Review of The Future of Data Analysis
         - href: epps6356/as2.qmd
           text: Assignment 2
- 
+        - href: epps6356/as3.qmd
+          text: Assignment 3       
+        - href: epps6356/Frank_Proposal.pptx
+          text: Research Proposal
+          
 format:
   html:
     theme: cyborg
