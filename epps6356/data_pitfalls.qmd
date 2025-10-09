@@ -9,5 +9,6 @@ title-block-banner: true
 
 ### Big Data Analytics Pitfalls
 
-In an age where data is excessive
+In an age where data is excessive, the problem now isn't that there is no data to support a hypothesis. The new data problem is that there is data to support every hypothesis. It is more important than ever before to comprehensively understand the data being analyzed and to test the validity of hypotheses even in cases where they are found to be statistically significant.
 
+Another issue with big data is overfitting and overparameterization. Since models in big data typically have high dimensionality and utilize complex machine learning techniques, they can memorize the noise in the training data as opposed to capturing the actual signal, leading to models that excel in test environments but perform poorly in production environments. 
