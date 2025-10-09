@@ -1,6 +1,6 @@
 ---
 title: "Data Visualization"
-subtitle: "Assignment 2: Murrell01.R"
+subtitle: "Prehackathon"
 author: "Guan Chen"
 date: last-modified
 toc: false
