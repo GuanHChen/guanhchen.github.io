@@ -27,6 +27,8 @@ website:
           text: Assignment 3       
         - href: epps6356/data_pitfalls.qmd
           text: Data Analytics Pitfalls Discussion 
+        - href: epps6356/prehackathon.qmd
+          text: Prehackathon
         - href: epps6356/Frank_Proposal.pptx
           text: Research Proposal
           
