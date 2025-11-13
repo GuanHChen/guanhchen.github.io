@@ -1,0 +1,20 @@
+---
+title: "Data Visualization"
+subtitle: "Review of Hadley Wickam's EMBL Keynote"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+### Hadley Wickam's EMBL Keynote On Data Visualization and Data Science
+
+In the keynote, Wickam explains the utilization of the tidyverse tools for data analysis in R. Wickam's keynote pushes both discussion of how the technology works and also his philosophy behind effective data science.
+
+In the tidyverse, the philosophy behind it is what drives the technology. Standardized data structures, or tidy data, organizes each observation in a consistent format which is facilitated by the packages tidyr and dplyr. For this part of data analysis, Wickam emphasizes that data cleanup, or data tidying, is the most critical part.
+
+The other part of Wickam's philosophy is clean code syntax. Readable code facilitates the movement or flow of thought. This is achieved with the use of piping %\>% which mimics the natural process of operations happening in a step-wise sequence. Readable code also means maintainable code which allows developers to quickly implement changes and interations.
+
+The grammar of graphics or ggplot is powered by these philosophical pillars by breaking down visualizations into independent, step-wise components. This format allows developers to adapt their visualizations to different use cases and follow the evolution of their thought process.
+
+By following data philosophy centered around consistent organization and sequential operations, the tidyverse provides a set of tools which facilitate clear, reproducible, and adaptable analyses.

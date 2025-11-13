@@ -35,18 +35,11 @@
     "text": "Big Data Analytics Pitfalls\nIn an age where data is excessive, the problem now isn’t that there is no data to support a hypothesis. The new data problem is that there is data to support every hypothesis. It is more important than ever before to comprehensively understand the data being analyzed and to test the validity of hypotheses even in cases where they are found to be statistically significant.\nAnother issue with big data is overfitting and overparameterization. Since models in big data typically have high dimensionality and utilize complex machine learning techniques, they can memorize the noise in the training data as opposed to capturing the actual signal, leading to models that excel in test environments but perform poorly in production environments."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Guan Chen",
+    "objectID": "epps6356/EMBL_discussion.html",
+    "href": "epps6356/EMBL_discussion.html",
+    "title": "Data Visualization",
     "section": "",
-    "text": "Get In Touch\n\n\n\n  \n  \n  \n\n\n\n\nHello! I am a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I am working as a software engineer at Motor Controls Inc to develop custom software solutions.\nPlease feel free to reach out via email for any inquiries."
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Guan Chen",
-    "section": "",
-    "text": "Get In Touch\n\n\n\n  \n  \n  \n\n\n\n\nHello! I am a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I am working as a software engineer at Motor Controls Inc to develop custom software solutions.\nPlease feel free to reach out via email for any inquiries."
+    "text": "Hadley Wickam’s EMBL Keynote On Data Visualization and Data Science\nIn the keynote, Wickam explains the utilization of the tidyverse tools for data analysis in R. Wickam’s keynote pushes both discussion of how the technology works and also his philosophy behind effective data science.\nIn the tidyverse, the philosophy behind it is what drives the technology. Standardized data structures, or tidy data, organizes each observation in a consistent format which is facilitated by the packages tidyr and dplyr. For this part of data analysis, Wickam emphasizes that data cleanup, or data tidying, is the most critical part.\nThe other part of Wickam’s philosophy is clean code syntax. Readable code facilitates the movement or flow of thought. This is achieved with the use of piping %&gt;% which mimics the natural process of operations happening in a step-wise sequence. Readable code also means maintainable code which allows developers to quickly implement changes and interations.\nThe grammar of graphics or ggplot is powered by these philosophical pillars by breaking down visualizations into independent, step-wise components. This format allows developers to adapt their visualizations to different use cases and follow the evolution of their thought process.\nBy following data philosophy centered around consistent organization and sequential operations, the tidyverse provides a set of tools which facilitate clear, reproducible, and adaptable analyses."
   },
   {
     "objectID": "qtfiles/cv.html",
@@ -54,6 +47,20 @@
     "title": "CV",
     "section": "",
     "text": "CV"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Guan Chen",
+    "section": "",
+    "text": "Get In Touch\n\n\n\n  \n  \n  \n\n\n\n\nHello! I am a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I am working as a software engineer at Motor Controls Inc with ownership in data governance. I drive platform modernization, .\nPlease feel free to reach out via email for any inquiries."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Guan Chen",
+    "section": "",
+    "text": "Get In Touch\n\n\n\n  \n  \n  \n\n\n\n\nHello! I am a master’s student in the Social Data Analytics and Research program at the University of Texas at Dallas. I am working as a software engineer at Motor Controls Inc with ownership in data governance. I drive platform modernization, .\nPlease feel free to reach out via email for any inquiries."
   },
   {
     "objectID": "epps6356/Druckrey_Review.html",

@@ -31,6 +31,8 @@ website:
           text: Prehackathon
         - href: epps6356/Frank_Proposal.pptx
           text: Research Proposal
+        - href: epps6356/EMBL_discussion.qmd
+          text: EMBL Discussion
           
 format:
   html:

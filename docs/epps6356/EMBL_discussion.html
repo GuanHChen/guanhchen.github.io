@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Guan Chen">
-<meta name="dcterms.date" content="2025-09-29">
+<meta name="dcterms.date" content="2025-11-12">
 
 <title>Guan Chen - Data Visualization</title>
 <style>
@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Data Visualization</h1>
-            <p class="subtitle lead">Review of The Future of Data Analysis</p>
+            <p class="subtitle lead">Review of Hadley Wickam’s EMBL Keynote</p>
                       </div>
   </div>
     
@@ -170,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 29, 2025</p>
+        <p class="date">November 12, 2025</p>
       </div>
     </div>
     
@@ -189,11 +189,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="the-future-of-data-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="the-future-of-data-analysis">The Future of Data Analysis</h3>
-<p>In The Future of Data Analysis talk, Edward Tufte discusses the importance of the philosophy of data analysis. Tufte stresses the goal of data analysis is to assist reasoning and to explain phenomena. Tufte proposes the idea that design choices, philosophy, and principles for data visualization should be a reflection of this mission.</p>
-<p>Tufte illustrates the replication crisis in academia, pointing out that many discoveries in the social sciences cannot be replicated. This is in part due to the virulence of stuffing statistics in research papers with no care about the principle but all about the method. It has been a trend to include some sort of statistics to improve the robustness of any research results. Yet, many researchers do not do their due diligence in building a working background in statistics, and even worse is that many employ statistics such as t-tests in circumstances which violate the tests’ fundamental assumptions.</p>
-<p>Tufte argues that data analysis should problem-oriented as opposed to method oriented. As a former academic, I have witnessed, first-hand, the mad scramble for employing (often bad) statistics. If data analysis principles are compromised, the outcome of data visualization loses power and meaning. Not only is this ineffective for explaining trends, but poor practices may even hinder and mislead audiences. In an age where there is more data than ever before and a library of statistical methods that exist alongside it, the problem is not that analysis needs to be conducted; the core issue is the right analysis must be used on the right data with an unyielding commitment to truth and ethics.</p>
+<section id="hadley-wickams-embl-keynote-on-data-visualization-and-data-science" class="level3">
+<h3 class="anchored" data-anchor-id="hadley-wickams-embl-keynote-on-data-visualization-and-data-science">Hadley Wickam’s EMBL Keynote On Data Visualization and Data Science</h3>
+<p>In the keynote, Wickam explains the utilization of the tidyverse tools for data analysis in R. Wickam’s keynote pushes both discussion of how the technology works and also his philosophy behind effective data science.</p>
+<p>In the tidyverse, the philosophy behind it is what drives the technology. Standardized data structures, or tidy data, organizes each observation in a consistent format which is facilitated by the packages tidyr and dplyr. For this part of data analysis, Wickam emphasizes that data cleanup, or data tidying, is the most critical part.</p>
+<p>The other part of Wickam’s philosophy is clean code syntax. Readable code facilitates the movement or flow of thought. This is achieved with the use of piping %&gt;% which mimics the natural process of operations happening in a step-wise sequence. Readable code also means maintainable code which allows developers to quickly implement changes and interations.</p>
+<p>The grammar of graphics or ggplot is powered by these philosophical pillars by breaking down visualizations into independent, step-wise components. This format allows developers to adapt their visualizations to different use cases and follow the evolution of their thought process.</p>
+<p>By following data philosophy centered around consistent organization and sequential operations, the tidyverse provides a set of tools which facilitate clear, reproducible, and adaptable analyses.</p>
 
 
 </section>
