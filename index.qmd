@@ -18,7 +18,7 @@ Get In Touch
 ```{=html}
 <script>
     function copyToClipboard() {
-        const email = 'guan.chen@utdallas.edu';
+        const email = 'guanhc416@gmail.com';
         navigator.clipboard.writeText(email).then(() => {
             const notification = document.createElement('div');
             notification.textContent = 'Email copied to clipboard';
@@ -52,7 +52,7 @@ Get In Touch
 ::::::
 
 ::: g-col-8
-Hello! I am a master's student in the Social Data Analytics and Research program at the University of Texas at Dallas. I am working as a software engineer at Motor Controls Inc to develop custom software solutions.
+Hello! I am a master's student in the Social Data Analytics and Research program at the University of Texas at Dallas. I am working as a software engineer at Motor Controls Inc with ownership in data governance. I drive platform modernization, .
 
 Please feel free to reach out via email for any inquiries.
 :::
