@@ -33,6 +33,18 @@ website:
           text: Research Proposal
         - href: epps6356/EMBL_discussion.qmd
           text: EMBL Discussion
+        - href: epps6356/the_week_in_charts.qmd
+          text: McKinsey's Chart Reviews
+        - href: epps6356/mckinsey_chart.qmd
+          text: McKinsey's Chart Reviews
+        - href: epps6356/pfc9.qmd
+          text: Time Series Concepts
+        - href: epps6356/as5.qmd
+          text: Assignment 5
+        - href: epps6356/pfc10.qmd
+          text: Interactive Bar Chart Code
+        - href: epps6356/as6.qmd
+          text: Assignment 6
           
 format:
   html:
