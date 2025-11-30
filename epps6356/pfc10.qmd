@@ -1,0 +1,171 @@
+---
+title: "Data Visualization"
+subtitle: "Interactive Bar Chart Replication"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+```{r, eval = FALSE}
+# Load required libraries
+library(shiny)
+library(tidyverse)
+library(zoo) # Required for rollmean()
+
+bmi_data <- read_csv("merged_data_with_gdp.csv")[, -c(1,2,4,15)]
+
+# Define global variables (optional data exploration lines from user kept for context)
+unique_years <- sort(unique(bmi_data$Year), decreasing=TRUE)
+all_countries <- unique(bmi_data$Location)
+
+# Color map provided by the user
+country_color_map <- c(
+  "United States of America" = "#E63946",
+  "Germany" = "#457B9D",
+  "Japan" = "#2A9D8F"
+)
+
+# Determine the full range of years for the slider
+min_year <- 2001
+max_year <- 2021
+
+# --- Shiny UI Definition ---
+ui <- fluidPage(
+  # Set a custom title and theme
+  titlePanel(
+    div(
+      "Country Overweight Rate - Rolling Average Comparison",
+      style = "color: #007bff; font-weight: bold;"
+    )
+  ),
+  
+  # Replaced sidebarLayout with a single mainPanel to display all content
+  mainPanel(
+    # INPUTS (Moved from the old sidebar)
+    h4("Analysis Parameters"),
+    p("Adjust the smoothing window size for the rolling average."),
+    
+    # Input to select the rolling window size
+    numericInput(
+      "window_size",
+      "Rolling Window Size (Years)",
+      value = 3,
+      min = 1,
+      max = 5
+    ),
+    
+    # Explanation for the user
+    tags$hr(),
+    p("The plot shows the specified rolling average for the selected year across all countries. The rolling average uses partial data at the start and end of the time series to ensure continuous data availability."),
+    
+    # PLOT
+    plotOutput("rollingAvgBarPlot"),
+    
+    # YEAR SLIDER (Remains under the graph)
+    sliderInput(
+      "selected_year",
+      # Updated Label to display the year prefix clearly
+      "Year: ", 
+      min = min_year, # Use dynamically calculated min year
+      max = max_year, # Use dynamically calculated max year
+      # Set initial value to the latest available year
+      value = min_year,
+      step = 1,
+      sep = "", # No comma separator for years
+      # Add play button functionality
+      animate = animationOptions(interval = 500) # Updated interval to 500ms
+    )
+  )
+)
+
+# --- Shiny Server Logic ---
+server <- function(input, output) {
+  
+  # 1. Prepare data and calculate the rolling average
+  processed_data <- reactive({
+    req(input$window_size)
+    req(input$selected_year)
+    
+    # Define the column indices based on the user's description of the subsetted data:
+    # Col 1: Location, Col 2: OverweightRate, Col 12: Year
+    COL_LOCATION <- 1
+    COL_RATE <- 2
+    COL_YEAR <- 12
+    
+    # Calculate rolling average across all years first
+    full_rolling_data <- bmi_data %>%
+      # Select the relevant columns using their index
+      select(
+        Location = all_of(COL_LOCATION),
+        OverweightRate = all_of(COL_RATE),
+        Year = all_of(COL_YEAR)
+      ) %>%
+      # Ensure Year is sorted correctly for rolling calculation
+      arrange(Location, Year) %>%
+      # Group by Location (Country)
+      group_by(Location) %>%
+      # Calculate the rolling mean using the specified window size
+      mutate(
+        RollingAvgRate = rollmean(
+          OverweightRate,
+          k = input$window_size,
+          fill = NA,
+          align = "center",
+          # partial = TRUE ensures the rolling mean is calculated
+          partial = TRUE
+        )
+      ) %>%
+      ungroup()
+    
+    # Filter the calculated data down to the selected year.
+    data_to_plot <- full_rolling_data %>%
+      filter(Year == input$selected_year)
+    
+    return(data_to_plot)
+  })
+  
+  # 2. Render the plot
+  output$rollingAvgBarPlot <- renderPlot({
+    data_to_plot <- processed_data()
+    
+    # Check if any data exists for the selected year/window
+    if (nrow(data_to_plot) == 0) {
+      return(
+        ggplot() +
+          labs(
+            title = paste0("No data available for the year ", input$selected_year, "."),
+            subtitle = "Please check your data source or year range."
+          ) +
+          theme_void(base_size = 18)
+      )
+    }
+    
+    # Create the bar graph: Location on X, Rate on Y. Only showing one year.
+    ggplot(data_to_plot, aes(x = Location, y = RollingAvgRate, fill = Location)) +
+      geom_col(
+        color = "black",
+        linewidth = 0.5
+      ) +
+      labs(
+        title = paste0(input$window_size, "-Year Rolling Avg. Overweight Rate in ", input$selected_year),
+        x = "Country",
+        y = "Rolling Average Overweight Rate (%)"
+      ) +
+      # Use the user-defined global color map
+      scale_fill_manual(values = country_color_map) +
+      theme_minimal(base_size = 16) +
+      theme(
+        plot.title = element_text(hjust = 0.5, face = "bold"),
+        axis.text.x = element_text(angle = 15, hjust = 0.5, face = "bold"), # Clearer country labels
+        legend.position = "none", # Remove legend as Location is on the X-axis
+        panel.grid.major.x = element_blank()
+      )
+  })
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
+```
+
+The primary differences between D3.js charts, Shiny charts, and ggplot2 lies in their interactability. While both shiny and ggplot2 are coded in R, they differ in their functionality. A ggplot chart generates a static image that has limited to no interactability. Conversely, a shiny chart can be filtered or sorted in live time based on the server functionalities which have been developed. The most distinct of the 3 are the D3.js charts. These charts are coded in JavaScript, HTML, and SVG and have the highest level of interactability. They support complex transitions, animations, and interaction behaviors at the cost of having the highest complexity. 

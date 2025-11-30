@@ -1,0 +1,24 @@
+---
+title: "Data Visualization"
+subtitle: "Time Series Concepts"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+Dependency:
+
+Temporal dependency or autocorrelation is when a variable at a specific time is correlated with its own past values. A simple example is the temperature; if it was snowing yesterday, it is unlikely to be hot today (90F).
+
+Spatial dependency represents the same idea as temporal dependency but with geography. As an example, the price of houses are dependent on the value of the houses in the same neighborhood.
+
+Time Series Concepts: ARIMA stands for AutoRegressive Integrated Moving Average. It is the traditional statistical model for analyzing and forecasting time series data and is designed to handle data where temporal dependency exists. It is composed of p, d, and q. Autoregressive component p shows how far back the dependency goes. Integrated component d removes trends to make the series stationary. The Moving Average component q accounts for randomness that is not explained by past data.
+
+Stationarity means the statistical properties such as mean and variance do not change.
+
+First difference is the change between consecutive observations
+
+First order autocorrelation is the linear correlation bewteen a time series and itself with a lag of 1 period. I.e. it explains how much of the current value is dependent on the value immediately preceeding it.
+
+Line charts, ACF plots, and scatterplots can be used to plot time.

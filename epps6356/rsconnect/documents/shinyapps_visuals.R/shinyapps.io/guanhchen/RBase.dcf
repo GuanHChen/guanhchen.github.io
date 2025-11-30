@@ -1,0 +1,13 @@
+name: RBase
+title: RBase
+username: guanhchen
+account: guanhchen
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16196862
+bundleId: 11251154
+url: https://guanhchen.shinyapps.io/RBase/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: anscombe01.R|as1.qmd|as2.qmd|as3.qmd|as5.qmd|as6.qmd|data_pitfalls.qmd|data_visualization_review.qmd|Druckrey_Review.qmd|EMBL_discussion.qmd|Fall.R|Frank_Proposal.pptx|hackathon.R|HPI.xlsx|mckinsey_chart.qmd|merged_data_with_gdp.csv|movies.RData|murrell01.R|myHPI.xlsx|pfc10.qmd|pfc9.qmd|pre_hackathon.R|prehackathon.qmd|racing.qmd|racing.r|SoftwareDevelopersByAge.png|the_future_of_data_analysis_review.qmd|the_week_in_charts.qmd

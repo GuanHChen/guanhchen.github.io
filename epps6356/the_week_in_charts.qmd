@@ -1,0 +1,23 @@
+---
+title: "Data Visualization"
+subtitle: "McKinsey's Charts Review and The Four Pillars of Visualization"
+author: "Guan Chen"
+date: last-modified
+toc: false
+title-block-banner: true
+---
+
+### McKinsey's Week In Charts
+
+Both McKinsey's "The Week in Charts" and "2024: The year in charts" feature a series of visualizations that describe recent events. However, there are a few key differences that distinguish the viewer experience for each of them. 
+
+In "The Week in Charts" site, visuals are represented on the homepage with thumbnails, making it easy for viewers to scroll through the site and find a topic that is interesting to them. Each thumbnail has a short summary providing background information on the topic and adding context to the visual. Users are able to scroll through into different topics with their own context and visuals. 
+
+In the "2024: The year in charts" site, scroll down the page and are presented with different visuals as they progress, each transitioning gently towards a different but related topic. Each visual also has a small animation that brings the visual into focus. This style of visual presentation is much more storyboard like and feels like a polished and curated set of stories to tell.     
+  
+In general, the visuals shown in each series are very well done. The main difference is that the week in charts series feels more like a repository of visuals to look through while the year in charts series feels like a story that has been carefully put together to show an intended message. While the visuals are interesting to look at and are backed by good visualization principles, some of the colors are quite similar to each other and can make it difficult to differentiate between data points. Additionally, some visuals have too much information and could benefit from aggregation which would simplify the visual while preserving the storytelling. The visuals are not perfect but almost there. 
+
+### The Four Pillars of Visualization
+
+As described on the UC Berkeley site, the four pillars of visualization are defined by: Has clear purpose, Includes only the relevant content, Uses appropriate structure, and Has useful formatting
+
